@@ -427,18 +427,74 @@ h1{font-size:22px}
 #cvAngles{height:175px!important}
 #tab-tool .row{min-height:24px}
 #tab-tool{gap:9px}
+
+.vin{width:100%;min-width:0;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);font:500 13px var(--f-mono);text-align:right;padding:2px 5px;font-variant-numeric:tabular-nums}
+.vin:focus{outline:2px solid var(--accent);outline-offset:0}
+.vin.bad{border-color:var(--err);background:var(--err-soft)}
+.crt .row .vin{background:#020603;color:#a8ffbd;border:1px solid #3f9a5c;border-radius:0;font:19px "VT323",monospace;padding:0 4px}
+.task{display:grid;gap:8px}
+.task .given{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 10px}
+.task .given label{display:grid;grid-template-columns:minmax(0,1fr) 76px;align-items:center;gap:6px;font-size:13px}
+.task .given input{width:100%;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);font:500 13px var(--f-mono);text-align:right;padding:3px 5px}
+.task .given small{grid-column:1/-1;color:var(--muted);font-size:11px;margin-top:-4px}
+.svlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:4px}
+.svc{height:26px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--muted);font:500 13px var(--f-mono);cursor:pointer;padding:0 4px;white-space:nowrap}
+.svc[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.svc.out{color:var(--ink);border-style:dashed}
+.svc.out[aria-pressed="true"]{background:var(--fc,#c0392b);border-color:var(--fc,#c0392b);border-style:solid;color:#fff}
+#svStd[aria-pressed="true"]{outline:2px solid var(--accent)}
+.step .take{margin-top:6px}
+.hcfg{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px}
+.hcfg label{display:grid;gap:2px;font-size:12px;color:var(--muted)}
+.hcfg select:disabled{opacity:.45}
+
+/* Fräswerkstatt: gleiche Bühne wie die Drehwerkstatt */
+#mdro{position:absolute;left:10px;bottom:58px;display:grid;grid-template-columns:auto auto auto auto;gap:0 10px;align-items:baseline;background:#0d1310;border:1px solid #2b3a33;border-radius:6px;padding:6px 12px;pointer-events:none;box-shadow:inset 0 0 12px rgba(0,0,0,.7)}
+#mdro span{font:600 13px var(--f-disp);color:#86ad93;letter-spacing:.06em}
+#mdro b{font:600 21px/1.1 var(--f-mono);color:#8dffa9;font-variant-numeric:tabular-nums;min-width:8ch;text-align:right;text-shadow:0 0 6px rgba(120,255,160,.35)}
+#mpanel,.page>*{min-width:0}
+#mstage{position:relative;min-height:0;border-radius:8px;overflow:hidden;background:var(--scene);border:1px solid var(--line)}
+#mgl{display:block;width:100%;height:100%;touch-action:none;outline:none}
+#mhud .k{color:var(--muted)}
+#mhud .v{text-align:right;font-variant-numeric:tabular-nums}
+#mhud .st{grid-column:1/-1;margin-top:4px;padding-top:4px;border-top:1px solid var(--line);font-family:var(--f-disp);font-size:14px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+#mhud .fcv{color:var(--fc);font-weight:600}
+#mviews{position:absolute;right:10px;top:10px;display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;max-width:60%}
+#mbar{position:absolute;left:10px;right:10px;bottom:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#mtoast{position:absolute;left:50%;top:12px;transform:translateX(-50%);max-width:min(520px,80%);background:var(--err-soft);color:var(--ink);border:1px solid var(--err);border-radius:6px;padding:8px 12px;font-size:14px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+#mtoast.info{background:var(--info-soft);border-color:var(--accent)}
+#mpanel{min-height:0;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+
+
+#mhud{position:absolute;left:10px;top:10px;background:color-mix(in srgb,var(--surface) 88%,transparent);border:1px solid var(--line);border-radius:6px;padding:8px 10px;
+  font:12px/1.5 var(--f-mono);display:grid;grid-template-columns:auto auto;gap:0 12px;pointer-events:none;backdrop-filter:blur(4px)}
+#mdro{grid-template-columns:repeat(6,auto)}
+@media (max-width:480px){#mviews{max-width:100%;left:10px;top:auto;bottom:62px;justify-content:flex-start}#mhud{font-size:11px}}
+.apps{display:flex;gap:4px}
+.app{display:flex;align-items:center;gap:8px;border:1px solid transparent;background:transparent;border-radius:7px;padding:3px 12px 3px 8px;font:700 20px/1 var(--f-disp);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.app svg{color:currentColor}
+.app:hover{color:var(--ink)}
+.app[aria-selected="true"]{color:var(--ink);background:var(--surface);border-color:var(--line);box-shadow:inset 0 -3px 0 var(--accent)}
+.app[aria-selected="true"] svg{color:var(--accent)}
+.zcol{display:grid;gap:4px;margin-left:6px}
+.mcp .ncbtn.mreset{background:linear-gradient(#f6a640,#dc8414);border-color:#9a5b0a}
+#mtab-cut .crtpage .ikey{width:40px}
+.crtmda{grid-template-columns:30px minmax(0,1fr)}
+@media (max-width:900px){#mstage{height:62vh;min-height:360px}#mpanel{overflow:visible}}
+@media (max-width:480px){.app{font-size:15px;padding:3px 8px 3px 6px}.app svg{width:24px}}
+
 </style>
 
 <div id="app">
   <header class="top">
-    <div class="brand">
-      <svg width="34" height="26" viewBox="0 0 44 34" aria-hidden="true"><rect x="1" y="6" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="11" y="12" width="22" height="8" fill="currentColor" opacity=".35"/><path d="M33 12h-6v8h6z" fill="currentColor"/><path d="M24 30l4-10 4 10z" fill="currentColor"/><path d="M1 32h42" stroke="currentColor" stroke-width="2"/></svg>
-      <h1 data-tip="Zerspanen an der konventionellen Drehmaschine: Halbzeug, Werkzeug und Schnittwerte wählen, Schnittkraft herleiten">Drehwerkstatt</h1>
-    </div>
-    <div class="plate">Leit- und Zugspindeldrehmaschine · Spitzenhöhe 160 mm · P<sub>Motor</sub> 7,5 kW · η 0,8 · n 32–2000 min⁻¹</div>
+    <nav class="apps" role="tablist" aria-label="Werkstatt wählen">
+      <button class="app" role="tab" data-app="dreh" aria-selected="true" data-tip="Zerspanen an der konventionellen Drehmaschine: Halbzeug, Werkzeug und Schnittwerte wählen, Schnittkraft herleiten"><svg width="34" height="26" viewBox="0 0 44 34" aria-hidden="true"><rect x="1" y="6" width="10" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="11" y="12" width="22" height="8" fill="currentColor" opacity=".35"/><path d="M33 12h-6v8h6z" fill="currentColor"/><path d="M24 30l4-10 4 10z" fill="currentColor"/><path d="M1 32h42" stroke="currentColor" stroke-width="2"/></svg><span>Drehwerkstatt</span></button>
+      <button class="app" role="tab" data-app="fraes" aria-selected="false" data-tip="Fräsen an der Konsolfräsmaschine: Fräser, Zahnvorschub, Eingriff und Schnittkraft"><svg width="30" height="26" viewBox="0 0 40 34" aria-hidden="true"><rect x="12" y="1" width="16" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 10h6v8h-6z" fill="currentColor" opacity=".45"/><path d="M18 18h4v7h-4z" fill="currentColor"/><path d="M18.5 19l3 2M18.5 22l3 2" stroke="var(--surface)" stroke-width="1"/><rect x="4" y="25" width="32" height="5" fill="currentColor" opacity=".35"/><path d="M1 32h38" stroke="currentColor" stroke-width="2"/></svg><span>Fräswerkstatt</span></button>
+    </nav>
+    <div class="plate" id="plate">Leit- und Zugspindeldrehmaschine · Spitzenhöhe 160 mm · P<sub>Motor</sub> 7,5 kW · η 0,8 · n 32–2000 min⁻¹</div>
   </header>
 
-  <main>
+  <main id="drehMain">
     <section id="stage" aria-label="3D-Ansicht der Drehmaschine">
       <canvas id="gl" tabindex="0" aria-label="3D-Drehmaschine. Pfeiltasten verfahren das Werkzeug."></canvas>
       <div id="hud" aria-live="off">
@@ -658,6 +714,13 @@ h1{font-size:22px}
           <canvas class="dia" id="cvSection" data-tip="Draufsicht auf die Spanfläche: gelb die Fläche, die die Schneide bei einer Umdrehung abnimmt. Gestrichelt die Schneide eine Umdrehung vorher – der Abstand ist der Vorschub f." height="270"></canvas>
           <div class="legend"><span style="--c:var(--chip)">Spanungsquerschnitt A</span><span style="--c:var(--accent)">Schneide jetzt</span><span style="--c:var(--muted)">Schneide eine Umdrehung vorher</span></div>
         </div>
+        <div class="card task">
+          <div class="diahead"><h3>Gegeben</h3><button class="btn sm" id="bTaskFill" type="button" data-tip="Zahlenwerte der gegebenen Größen aus den aktuellen Einstellungen übernehmen">Werte aus Einstellungen</button></div>
+          <div class="svlist" id="svGiven"></div>
+          <div class="given" id="taskGiven"></div>
+          <div class="diahead"><h3>Daraus berechenbar – Gesucht anklicken</h3><button class="btn sm" id="svStd" type="button" aria-pressed="true" data-tip="Die vollständige Herleitung aus den Einstellungen zeigen">Standard-Herleitung</button></div>
+          <div class="svlist" id="svCalc"></div>
+        </div>
         <ol class="steps" id="steps"></ol>
         <div class="grp">
           <h3>Spezifische Schnittkraft über der Spanungsdicke</h3>
@@ -709,6 +772,196 @@ h1{font-size:22px}
             <tr><td class="code">Maus</td><td>Ziehen: drehen · Rechtsklick ziehen: schieben · Rad: zoomen</td></tr>
           </table>
         </div>
+      </div>
+    </aside>
+  </main>
+  <main id="fraesMain" hidden>
+    <section id="mstage" aria-label="3D-Ansicht der Fräsmaschine">
+      <canvas id="mgl" tabindex="0" aria-label="3D-Fräsmaschine. Pfeiltasten und Bild auf/ab verfahren den Tisch."></canvas>
+      <div id="mhud" aria-live="off">
+        <span class="k">n</span><span class="v" id="mhN">–</span>
+        <span class="k">v<sub>c</sub></span><span class="v" id="mhVc">–</span>
+        <span class="k">v<sub>f</sub> · f<sub>z</sub></span><span class="v" id="mhVf">–</span>
+        <span class="k">a<sub>p</sub> · a<sub>e</sub></span><span class="v" id="mhA">–</span>
+        <span class="k">P<sub>c</sub> (live)</span><span class="v fcv" id="mhPc">–</span>
+        <span class="k">F<sub>c</sub> Summe (live)</span><span class="v" id="mhFc">–</span>
+        <span class="st" id="mhSt">Bereit</span>
+      </div>
+      <div id="mviews" role="group" aria-label="Kameraansicht">
+        <button class="vbtn" data-mview="gesamt" aria-pressed="true">Gesamt</button>
+        <button class="vbtn" data-mview="nah" aria-pressed="false">Werkzeug</button>
+        <button class="vbtn" data-mview="oben" aria-pressed="false">Draufsicht</button>
+        <button class="vbtn" data-mview="vorn" aria-pressed="false">Von vorn</button>
+      </div>
+      <div id="mdro" aria-hidden="true"><span>X</span><b id="mdroX">–</b><span>Y</span><b id="mdroY">–</b><span>Z</span><b id="mdroZ">–</b></div>
+      <div id="mtoast" hidden></div>
+      <div id="mbar">
+        <button class="mbtn" id="mbSpindle"><span class="lamp"></span>Spindel</button>
+        <button class="mbtn primary" id="mbStart">▶ Zyklus starten</button>
+        <button class="mbtn danger" id="mbStop">■ Halt</button>
+        <div class="keyhint">Pfeile: X/Y · Bild ↑↓: Z · Shift: Eilgang · WASD: Kamera · Q/E: drehen<br>Ziehen: drehen · Rechtsklick: schieben · Rad: zoomen</div>
+        <label class="tsel" for="mSpeed">Zeitraffer
+          <select id="mSpeed"><option value="0.25">¼×</option><option value="1" selected>1×</option><option value="3">3×</option><option value="8">8×</option><option value="20">20×</option></select>
+        </label>
+      </div>
+    </section>
+
+    <aside id="mpanel">
+      <nav class="tabs" role="tablist">
+        <button class="tab" role="tab" data-mtab="stock" aria-selected="false">Halbzeug</button>
+        <button class="tab" role="tab" data-mtab="tool" aria-selected="false">Werkzeug</button>
+        <button class="tab" role="tab" data-mtab="cut" aria-selected="true">Steuerung</button>
+        <button class="tab" role="tab" data-mtab="force" aria-selected="false" data-tip="Vom Eingriff zur Kraft und Leistung beim Fräsen (Kienzle mit mittlerer Spanungsdicke h_m).">Rechnung</button>
+        <button class="tab" role="tab" data-mtab="view" aria-selected="false">Ansicht</button>
+      </nav>
+
+      <!-- HALBZEUG -->
+      <div class="page" id="mtab-stock" hidden>
+        <canvas class="dia" id="mcvStock" height="190" data-tip="Rohteil im Maschinenschraubstock auf Parallelunterlagen. Die Backen spannen über die Breite B; oben muss das Teil mindestens die Frästiefe überstehen."></canvas>
+        <div class="grp dims">
+          <div class="row" data-tip="Länge in X"><label for="mL">L</label><input type="range" id="mL" min="40" max="200" step="5"><span class="val" id="mvL"></span></div>
+          <div class="row" data-tip="Breite in Y (Spannrichtung des Schraubstocks)"><label for="mB">B</label><input type="range" id="mB" min="20" max="120" step="5"><span class="val" id="mvB"></span></div>
+          <div class="row" data-tip="Höhe in Z"><label for="mH">H</label><input type="range" id="mH" min="10" max="80" step="1"><span class="val" id="mvH"></span></div>
+        </div>
+        <div class="tiles mats" id="mMatTiles"></div>
+        <div class="kchips" id="mMatCard"></div>
+        <div class="tiles acts"><button class="tile main" id="mbLoad" data-tip="Rohteil mit diesen Maßen neu spannen"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="8" width="16" height="8"/><path d="M2 18h20M4 8V5M20 8V5"/></svg><span>Einspannen</span></button></div>
+      </div>
+
+      <!-- WERKZEUG -->
+      <div class="page" id="mtab-tool" hidden>
+        <div class="tools" id="mToolList"></div>
+        <div class="card" id="mToolInfo"></div>
+        <div class="hcfg" id="mHeadCfg" data-tip="Nur für das Wendeplatten-Werkzeug: Grundkörper mit Plattentyp, Durchmesser und Zähnezahl frei kombinieren">
+          <label><span>Wendeplatten-Werkzeug</span><select class="sel" id="mHeadT"></select></label>
+          <label><span>D<sub>c</sub></span><select class="sel" id="mHeadD"></select></label>
+          <label><span>Zähne z</span><select class="sel" id="mHeadZ"></select></label>
+        </div>
+        <canvas class="dia" id="mcvTool" height="200" data-tip="Links von der Seite (Schneidenkontur, Durchmesser, nutzbare Schneidenlänge), rechts von unten: Schneiden bzw. Wendeschneidplatten am Umfang, Spanräume und Drehrichtung bei M3."></canvas>
+        <div class="row2"><label>Schneidstoff<select class="sel" id="mCm"></select></label><label>Verschleiß<select class="sel" id="mWear"><option value="0">scharf (K = 1,0)</option><option value="1">angenutzt (K = 1,15)</option><option value="2">stumpf (K = 1,3)</option></select></label></div>
+      </div>
+
+      <!-- STEUERUNG -->
+      <div class="page nc" id="mtab-cut">
+        <div class="ncbox">
+          <div class="ncband"><span>NC-BAHNSTEUERUNG 810-M</span><span class="ncband-r">FRÄSWERKSTATT</span></div>
+          <div class="ncbezel">
+            <div class="crt">
+              <div class="crthead"><span class="inv" id="mcMode">JOG</span><span id="mcProg">KANAL 1  %100</span><span class="inv" id="mcStat">BEREIT</span></div>
+              <div class="crtpage" data-mp="pos">
+                <table class="crtpos">
+                  <tr><th>WKS</th><th>IST</th><th>RESTWEG</th></tr>
+                  <tr><td>X</td><td id="miX">0</td><td id="mrX">0</td></tr>
+                  <tr><td>Y</td><td id="miY">0</td><td id="mrY">0</td></tr>
+                  <tr><td>Z</td><td id="miZ">0</td><td id="mrZ">0</td></tr>
+                </table>
+                <div class="crtgrid">
+                  <span>S</span><b id="mcS">0</b><span>F</span><b id="mcF">0</b>
+                  <span>OVR</span><b id="mcO">100 %</b><span>T</span><b id="mcT">–</b>
+                </div>
+                <p class="note">WKS: X0/Y0 = linke hintere Ecke, Z0 = Oberkante Rohteil</p>
+              </div>
+              <div class="crtpage" data-mp="mda" hidden>
+                <h3>MDA  –  SOLLPOSITION</h3>
+                <div class="crtmda"><span>X</span><input type="text" id="mSollX" inputmode="decimal" autocomplete="off"><span>Y</span><input type="text" id="mSollY" inputmode="decimal" autocomplete="off"><span>Z</span><input type="text" id="mSollZ" inputmode="decimal" autocomplete="off"></div>
+                <div class="btnrow"><button class="ikey" id="mGoRapid" data-tip="G0 – Sollposition im Eilgang anfahren">G0</button><button class="ikey" id="mGoFeed" data-tip="G1 – Sollposition mit Vorschub anfahren (Spindel muss laufen)">G1</button><button class="ikey" id="mTake" data-tip="Istposition als Sollwert übernehmen">⇩</button></div>
+                <p class="note">ADRESSE X/Y/Z · ZIFFERN · INPUT · NC-START FÄHRT MIT <span id="mMdaG">G0</span></p>
+              </div>
+              <div class="crtpage" data-mp="auto" hidden>
+                <h3>ZYKLUS</h3>
+                <div class="chips" id="mOpChips">
+                  <button class="ikey chip" data-mop="plan" data-tip="Planfräsen – Oberfläche zeilenweise abfräsen">▤</button>
+                  <button class="ikey chip" data-mop="schulter" data-tip="Absatz (Schulter) an der vorderen Kante – Umfangs- und Stirnfräsen">⌐</button>
+                  <button class="ikey chip" data-mop="nut" data-tip="Nut in X-Richtung – voller Eingriff a_e = D">⊔</button>
+                  <button class="ikey chip" data-mop="fase" data-tip="Fase an der vorderen Oberkante – nur mit Fasenfräser (Wendeplatten-Konfigurator). a_p = Fasentiefe">◺</button>
+                  <button class="ikey chip" data-mop="tnut" data-tip="T-Nut: Grund einer vorgefrästen Halsnut mit dem T-Nutenfräser verbreitern (gleiche Nutlage, Tiefe = Nutgrund)">⊥</button>
+                </div>
+                <div class="chips" id="mLaufChips">
+                  <button class="ikey chip" data-lauf="gleich" data-tip="Gleichlauffräsen: Schneide und Vorschub laufen gleich – Span beginnt dick">GL</button>
+                  <button class="ikey chip" data-lauf="gegen" data-tip="Gegenlauffräsen: Schneide läuft gegen den Vorschub – Span beginnt bei null">GG</button>
+                </div>
+                <div class="row"><label for="mAp">A<sub>P</sub></label><input type="range" id="mAp" min="0.2" max="10" step="0.1"><span class="val" id="mvAp"></span></div>
+                <div class="row"><label for="mAe">A<sub>E</sub></label><input type="range" id="mAe" min="0.5" max="60" step="0.5"><span class="val" id="mvAe"></span></div>
+                <div class="row"><label for="mT">TIEFE</label><input type="range" id="mT" min="0.5" max="30" step="0.5"><span class="val" id="mvT"></span></div>
+                <div class="row"><label for="mSy">NUT Y</label><input type="range" id="mSy" min="5" max="115" step="1"><span class="val" id="mvSy"></span></div>
+                <div class="row"><label for="mSl">NUT L</label><input type="range" id="mSl" min="10" max="200" step="1"><span class="val" id="mvSl"></span></div>
+                <div class="btnrow"><button class="ikey" id="mStart2" data-tip="Zyklus starten">▶</button><button class="ikey" id="mReload" data-tip="Neues Rohteil spannen">⟲</button></div>
+              </div>
+              <div class="crtpage" data-mp="tech" hidden>
+                <h3>TECHNOLOGIE</h3>
+                <div class="row"><label for="mN">DREHZAHL N</label><input type="range" id="mN" min="0" max="12" step="1"><span class="val" id="mvN"></span></div>
+                <div class="row"><label for="mVf">VORSCHUB VF</label><input type="range" id="mVf" min="0" max="12" step="1"><span class="val" id="mvVf"></span></div>
+                <p class="note" id="mVcNote"></p>
+                <div class="btnrow"><button class="ikey" id="mNrec" data-tip="Drehzahl aus dem Richtwert v_c und Vorschub aus f_z wählen">⚙</button></div>
+              </div>
+              <div class="crtpage" data-mp="alarm" hidden>
+                <h3>ALARME / HINWEISE</h3>
+                <ul class="msgs" id="mMsgs"></ul>
+              </div>
+              <button class="crtalarm" id="mcAlarm" type="button">KEIN ALARM</button>
+              <div class="crtsk"><button data-msk="pos">POSI-<br>TION</button><button data-msk="mda">MDA<br>EINGABE</button><button data-msk="auto">ZYKLUS<br>AUTOM.</button><button data-msk="tech">TECHNO-<br>LOGIE</button><button data-msk="alarm">ALARM<br>DIAGN.</button></div>
+            </div>
+            <div class="softkeys"><button class="sk-arrow" id="mskPrev" aria-label="Vorherige Seite">‹</button><button data-msk="pos" aria-label="Softkey Position"></button><button data-msk="mda" aria-label="Softkey MDA"></button><button data-msk="auto" aria-label="Softkey Zyklus"></button><button data-msk="tech" aria-label="Softkey Technologie"></button><button data-msk="alarm" aria-label="Softkey Alarm"></button><button class="sk-arrow" id="mskNext" aria-label="Nächste Seite">›</button></div>
+          </div>
+          <div class="mcp">
+            <div class="leds"><span><i id="mledAl" class="led red"></i>ALARM</span><span><i id="mledSp" class="led grn"></i>SPINDEL</span><span><i id="mledFd" class="led grn"></i>VORSCHUB</span><span><i id="mledAu" class="led yel"></i>ZYKLUS</span></div>
+            <div class="mcprow">
+              <div class="mcpgrp">
+                <div class="jog" role="group" aria-label="Tisch verfahren">
+                  <button class="up ncbtn" data-mjog="0,-1,0" data-tip="−Y: Werkzeug nach hinten">−Y</button>
+                  <button class="lf ncbtn" data-mjog="-1,0,0" data-tip="−X: Werkzeug nach links">−X</button>
+                  <button class="mid ncbtn" id="mkRapid" data-tip="Eilgang überlagern – gedrückt halten">⟫</button>
+                  <button class="rt ncbtn" data-mjog="1,0,0" data-tip="+X: Werkzeug nach rechts">+X</button>
+                  <button class="dn ncbtn" data-mjog="0,1,0" data-tip="+Y: Werkzeug nach vorn">+Y</button>
+                </div>
+                <div class="zcol"><button class="ncbtn" data-mjog="0,0,1" data-tip="+Z: Werkzeug hoch">+Z</button><button class="ncbtn" data-mjog="0,0,-1" data-tip="−Z: Werkzeug runter (zustellen)">−Z</button></div>
+              </div>
+              <div class="mcpgrp knobgrp"><div id="movr" class="knob" data-tip="Vorschub-Override 0–120 %: ziehen oder Mausrad" role="slider" tabindex="0" aria-label="Vorschub-Override"><i></i></div><b id="movrVal">100 %</b></div>
+              <div class="mcpgrp col"><button class="ncbtn" id="mkSpOn" data-tip="Spindel EIN (rechtsdrehend, M3)">↻</button><button class="ncbtn" id="mkSpOff" data-tip="Spindel AUS">⊘</button></div>
+            </div>
+            <div class="mcprow">
+              <div class="keypad" id="mkeypad" role="group" aria-label="Zahlenfeld">
+                <button data-k="X" class="adr">X</button><button data-k="Y" class="adr">Y</button><button data-k="Z" class="adr">Z</button><button data-k="BS">⌫</button>
+                <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button><button data-k="-">−</button>
+                <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button><button data-k=".">.</button>
+                <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button><button data-k="0">0</button>
+                <button data-k="IN" class="inp">INPUT ⏎</button>
+              </div>
+            </div>
+            <div class="mcprow">
+              <div class="mcpgrp feeds"><button class="ncbtn" id="mkHome" data-tip="Werkzeug freifahren (Z hoch)">⇱</button></div>
+              <div class="mcpgrp nckeys"><button class="ncbtn mreset" id="mkReset" data-tip="RESET – Bewegung abbrechen">⟲</button><button class="ncbtn stop" id="mkStop" data-tip="NC-STOP – Vorschub anhalten">◼</button><button class="ncbtn start" id="mkStart" data-tip="NC-START – in MDA: Sollposition anfahren, sonst Zyklus starten">▶</button></div>
+              <button class="estop" id="mkEstop" data-tip="NOT-HALT – Spindel und alle Vorschübe sofort stoppen" aria-label="Not-Halt">NOT<br>HALT</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RECHNUNG -->
+      <div class="page" id="mtab-force" hidden>
+        <div class="big">
+          <div class="bigv fc" data-tip="Mittlere Schnittkraft aller Schneiden im Eingriff"><span>F<sub>c</sub> gesamt</span><b id="mbigFc">–</b></div>
+          <div class="bigv"><span>P<sub>c</sub> Schneide</span><b id="mbigPc">–</b></div>
+          <div class="bigv"><span>Q Spanvolumen</span><b id="mbigQ">–</b></div>
+        </div>
+        <canvas class="dia" id="mcvEng" height="250" data-tip="Draufsicht auf den Eingriff: Werkstück (grau), Fräser mit Drehrichtung, Vorschub v_f, Arbeitseingriff a_e und Eingriffswinkel φ_s. Der gelbe Span zeigt, wie sich die Spanungsdicke beim Gleich- oder Gegenlauf ändert."></canvas>
+        <canvas class="dia" id="mcvBend" height="190" data-tip="Der Fräser als eingespannter Balken: die Radialkraft F_r drückt ihn vom Material weg. Gestrichelt die unverformte Lage; die Biegung ist stark überhöht gezeichnet."></canvas>
+        <ol class="steps" id="mSteps"></ol>
+        <div class="grp"><h3>Leistung an der Maschine</h3><div class="pbar" aria-hidden="true"><i id="mpbar"></i></div><p class="note" id="mpNote"></p></div>
+      </div>
+
+      <!-- ANSICHT -->
+      <div class="page" id="mtab-view" hidden>
+        <div class="grp"><h3>In der 3D-Ansicht zeigen</h3>
+          <label class="chk"><input type="checkbox" id="mckHud" checked> Messwerte links oben</label>
+          <label class="chk"><input type="checkbox" id="mckDro" checked> Positionsanzeige</label>
+          <label class="chk"><input type="checkbox" id="mckChips" checked> Späne</label></div>
+        <div class="grp"><h3>Tastatur und Maus</h3>
+          <table class="tbl">
+            <tr><td class="code">← →</td><td>X− / X+</td></tr><tr><td class="code">↑ ↓</td><td>Y− (nach hinten) / Y+</td></tr>
+            <tr><td class="code">Bild ↑ ↓</td><td>Z+ / Z−</td></tr><tr><td class="code">Shift</td><td>Eilgang</td></tr>
+            <tr><td class="code">W A S D</td><td>Kamera bewegen</td></tr><tr><td class="code">Q E</td><td>Kamera drehen</td></tr>
+          </table></div>
       </div>
     </aside>
   </main>
@@ -1205,10 +1458,10 @@ function buildWorkpiece(){
   W.Rjaw=S.shape==='sechskant'||S.shape==='vierkant'?S.D/2:S.D/2;
   W.Rout=Math.max(...R0t);if(S.ecc>0)W.Rjaw=W.Rout;
   W.sin=new Float32Array(NT);W.cos=new Float32Array(NT);for(let t=0;t<NT;t++){W.sin[t]=Math.sin(t*DTH);W.cos[t]=Math.cos(t*DTH)}
-  const nv=(NZ+1)*NT;
+  const nv=(NZ+2)*NT;
   const pos=new Float32Array(nv*3),col=new Float32Array(nv*3);
-  const idx=new Uint32Array(NZ*NT*6);let k=0;
-  for(let i=0;i<NZ;i++)for(let t=0;t<NT;t++){
+  const idx=new Uint32Array((NZ+1)*NT*6);let k=0;
+  for(let i=0;i<=NZ;i++)for(let t=0;t<NT;t++){
     const t2=(t+1)%NT,a=i*NT+t,b=i*NT+t2,c=(i+1)*NT+t,d=(i+1)*NT+t2;
     idx[k++]=a;idx[k++]=c;idx[k++]=b;idx[k++]=b;idx[k++]=c;idx[k++]=d;
   }
@@ -1267,10 +1520,11 @@ function updateGeo(all){
   }
   // Abschlussring (Stirnfläche)
   const zi=(NZ-1)*DZ;
-  for(let t=0;t<NT;t++){const o=(NZ*NT+t)*3;pos[o]=zi;pos[o+1]=W.rIn*sin[t];pos[o+2]=W.rIn*cos[t];col[o]=rc[0]*.7;col[o+1]=rc[1]*.7;col[o+2]=rc[2]*.7}
+  for(let t=0;t<NT;t++){const o=(NZ*NT+t)*3,q=((NZ-1)*NT+t)*3,o2=o+NT*3;pos[o]=pos[q];pos[o+1]=pos[q+1];pos[o+2]=pos[q+2];pos[o2]=zi;pos[o2+1]=W.rIn*sin[t];pos[o2+2]=W.rIn*cos[t];
+    for(const u of [o,o2]){col[u]=rc[0]*.7;col[u+1]=rc[1]*.7;col[u+2]=rc[2]*.7}}
   const pa=W.geo.attributes.position,ca=W.geo.attributes.color;
   if(all){pa.updateRange.offset=0;pa.updateRange.count=-1;ca.updateRange.offset=0;ca.updateRange.count=-1}
-  else{const off=lo*NT*3,cnt=(hi-lo+1)*NT*3;pa.updateRange.offset=off;pa.updateRange.count=cnt;ca.updateRange.offset=off;ca.updateRange.count=cnt}
+  else{const off=lo*NT*3,cnt=(hi>=NZ-2?NZ+2-lo:hi-lo+1)*NT*3;pa.updateRange.offset=off;pa.updateRange.count=cnt;ca.updateRange.offset=off;ca.updateRange.count=cnt}
   pa.needsUpdate=true;ca.needsUpdate=true;
   // Ende des Werkstücks
   let e=W.NZ-1;while(e>0&&W.RMAX[e]<=W.rIn+0.005)e--;
@@ -1380,7 +1634,7 @@ function buildSecMesh(){
 }
 
 /* ===================== Bewegung und Schnitt ===================== */
-const nVal=()=>N_STEPS[S.nI], fVal=()=>F_STEPS[S.fI];
+const nVal=()=>S.nC??N_STEPS[S.nI], fVal=()=>S.fC??F_STEPS[S.fI];
 const FR={vol:0,rv:0,rapidCut:false,curF:0.2,curR:5};
 // Je Zelle: Kern [rIn, R] und optional Ring [R0, R1] (entsteht beim Stirneinstich).
 // Das Werkzeug nimmt nur das Band [unten, oben] seiner Schneidplatte weg.
@@ -1928,6 +2182,7 @@ function raClass(ra){const N=[[0.4,'N5'],[0.8,'N6'],[1.6,'N7'],[3.2,'N8'],[6.3,'
 /* ===================== Panel-Ausgabe ===================== */
 function sym(a,b){return `${a}<sub>${b}</sub>`}
 function renderSteps(){
+  if(S.task&&S.task!=='std'){renderTaskSteps();return}
   const R=CALC,m=MATS[S.mat],op=S.op;
   const isSt=op==='stechen';
   const kapTxt=TL.def.kind==='round'?`κ<sub>r</sub> = arccos(1 − a<sub>p</sub>/r) = ${fmt0(R.kappa)}°`:isSt?'κ<sub>r</sub> = 90°':op==='plan'?`κ<sub>r</sub> = 90° + κ<sub>r</sub>′ = ${fmt0(R.kappa)}° (zur Vorschubrichtung)`:`κ<sub>r</sub> = ${fmt0(R.kappa)}°`;
@@ -2193,7 +2448,7 @@ function selectTool(id){
   if(isHSS(t))S.cm='HSS';else if(S.cm==='HSS')S.cm='HM';
   if(!t.ops.includes(S.op))S.op=t.ops[0];
   if(t.kind==='groove'||t.kind==='round')S.delta=0;
-  if(t.kind==='groove'&&F_STEPS[S.fI]>0.1)S.fI=4;
+  if(t.kind==='groove'&&fVal()>0.1){S.fC=null;S.fI=4}
   buildTL();buildToolMesh();syncInputs();
   S.tgrp=id==='wsp'?'wsp':TBYID[id].grp;renderToolList();renderBuilder();
   // Werkzeug darf nicht im Material stehen
@@ -2242,7 +2497,7 @@ function syncInputs(){
   $$('#shapeChips .tile').forEach(b=>b.setAttribute('aria-pressed',b.dataset.shape===S.shape));
   $('#lblD').textContent=S.shape==='rund'||S.shape==='rohr'?'D':S.shape==='sechskant'?'SW':'a';
   $('#inD').value=S.D;$('#vD').textContent=S.D+' mm';
-  {const off=S.shape!=='rohr';$('#rowDi').classList.toggle('off',off);$('#inDi').disabled=off}$('#inDi').max=S.D-6;S.di=Math.min(S.di,S.D-6);$('#inDi').value=S.di;$('#vDi').textContent=S.di+' mm';
+  {const off=S.shape!=='rohr';$('#rowDi').classList.toggle('off',off);$('#inDi').disabled=off}$('#inDi').max=S.D-6;S.di=Math.min(S.di,S.D-2);$('#inDi').value=S.di;$('#vDi').textContent=S.di+' mm';
   $('#inL').value=S.L;$('#vL').textContent=S.L+' mm';$('#tTail').dataset.tip=S.shape==='rohr'?'Reitstock mit Rohrspitze anstellen – der 60°-Kegel greift in die Bohrung':'Reitstock mit mitlaufender Körnerspitze anstellen – stützt lange Teile ab';$('#ckTail').checked=S.tail;$('#tTail').setAttribute('aria-pressed',S.tail);requestAnimationFrame(drawStock);
   {const r=S.shape==='rund';$('#rowEcc').classList.toggle('off',!r);$('#inEcc').disabled=!r;$('#bReclamp').disabled=!r;const mx=Math.max(0,S.D/2-3);$('#inEcc').max=mx;S.eccSet=Math.min(S.eccSet,mx);
    $('#inEcc').value=S.eccSet;$('#vEcc').textContent=fmt(S.eccSet,1)+' mm'+(S.eccSet!==S.ecc&&r?' *':'')}
@@ -2279,7 +2534,7 @@ on('#bLoad','click',()=>{loadStock();toast('Neues Rohteil eingespannt.','info')}
 on('#bReload','click',()=>loadStock());
 $$('#opChips .chip').forEach(b=>b.onclick=()=>{S.op=b.dataset.op;if(S.op!=='stechen')S.angOp=S.op;syncInputs();recompute(true);$$('#angOpChips .chip').forEach(c=>c.setAttribute('aria-pressed',c.dataset.aop===S.angOp))});
 const live=(id,fn)=>on(id,'input',e=>{fn(+e.target.value);syncInputs();recompute(false)});
-live('#inN',v=>S.nI=v);live('#inF',v=>S.fI=v);live('#inAp',v=>S.ap=v);live('#inLc',v=>S.lc=v);live('#inZg',v=>S.zg=v);live('#inTg',v=>S.tg=v);live('#inPass',v=>S.passes=v);
+live('#inN',v=>{S.nC=null;S.nI=v});live('#inF',v=>{S.fC=null;S.fI=v});live('#inAp',v=>S.ap=v);live('#inLc',v=>S.lc=v);live('#inZg',v=>S.zg=v);live('#inTg',v=>S.tg=v);live('#inPass',v=>S.passes=v);
 on('#inDelta','input',e=>{S.delta=+e.target.value;buildTL();buildToolMesh();if(penetration(M.u,M.v)>0.01)M.v=rmaxIn(0,S.L)+12;syncInputs();recompute(true)});
 on('#inGamma','input',e=>{S.gHSS[S.tool]=+e.target.value;buildTL();buildToolMesh();syncInputs();recompute(true)});
 on('#inAlpha','input',e=>{S.aHSS[S.tool]=+e.target.value;buildTL();buildToolMesh();syncInputs();recompute(true)});
@@ -2298,6 +2553,127 @@ on('#bZero','click',()=>{S.zOff=M.u;updZRef();takeIst();toast('Z-Nullpunkt an de
 on('#bZeroReset','click',()=>{S.zOff=0;updZRef();takeIst()});
 $$('#viewBtns2 .btn').forEach(b=>b.onclick=()=>setView(b.dataset.view2));
 on('#ckDro','change',e=>{$('#dro').hidden=!e.target.checked});
+/* Zahlenfelder neben den Reglern: Regler = sinnvoller Bereich, Eingabe = alles, was physikalisch geht */
+{const NUMF={
+  inD:{n:'Durchmesser',min:5,max:250,u:'mm',set:v=>S.D=v,a:'stock'},
+  inDi:{n:'Innendurchmesser',min:2,max:()=>S.D-2,u:'mm',set:v=>S.di=v,a:'stock',why:'kleiner als D − 2 mm'},
+  inL:{n:'Länge',min:10,max:500,u:'mm',set:v=>S.L=v,a:'stock'},
+  inEcc:{n:'Versatz',min:0,max:()=>Math.max(0,S.D/2-3),u:'mm',set:v=>S.eccSet=v,a:'stock',why:'höchstens D/2 − 3 mm, sonst greifen die Backen nicht'},
+  inN:{n:'Drehzahl',min:1,max:2000,u:'min⁻¹',set:v=>S.nC=v,a:'cut',why:'die Maschine dreht höchstens 2000 min⁻¹'},
+  inF:{n:'Vorschub',min:0.005,max:2,u:'mm',set:v=>S.fC=v,a:'cut'},
+  inAp:{n:'Schnitttiefe',min:0.01,max:40,u:'mm',set:v=>S.ap=v,a:'cut'},
+  inLc:{n:'Drehlänge',min:1,max:()=>S.L,u:'mm',set:v=>S.lc=v,a:'cut',why:'höchstens die freie Länge'},
+  inZg:{n:'Einstichlage',min:1,max:()=>S.L,u:'mm',set:v=>S.zg=v,a:'cut'},
+  inTg:{n:'Einstichtiefe',min:0.1,max:()=>S.D/2+1,u:'mm',set:v=>S.tg=v,a:'cut'},
+  inPass:{n:'Anzahl Schnitte',min:1,max:50,u:'',int:1,set:v=>S.passes=v,a:'cut'},
+  inDelta:{n:'Multifix-Rastung',min:-180,max:180,u:'°',step:9,set:v=>S.delta=v,a:'tool',why:'der Multifix rastet in 9°-Schritten'},
+  inGamma:{n:'Spanwinkel γ',min:-20,max:35,u:'°',set:v=>S.gHSS[S.tool]=v,a:'tool'},
+  inAlpha:{n:'Freiwinkel α',min:0,max:25,u:'°',set:v=>S.aHSS[S.tool]=v,a:'tool'}};
+ const after=a=>{if(a==='stock')syncInputs();else if(a==='cut'){syncInputs();recompute(false)}else{buildTL();buildToolMesh();if(penetration(M.u,M.v)>0.01)M.v=rmaxIn(0,S.L)+12;syncInputs();recompute(true)}};
+ const lim=x=>typeof x==='function'?x():x;
+ for(const [rid,c] of Object.entries(NUMF)){
+   const r=$('#'+rid);if(!r)continue;const sp=r.parentElement.querySelector('span.val');if(!sp)continue;
+   const inp=document.createElement('input');inp.type='text';inp.inputMode='decimal';inp.autocomplete='off';inp.className='val vin';inp.id=sp.id;
+   inp.setAttribute('aria-label',c.n+' eingeben');inp.dataset.tip=`${c.n} eintippen (Enter). Der Regler deckt den üblichen Bereich ab, hier geht ${fmt(lim(c.min),Number.isInteger(lim(c.min))?0:3)} … ${fmt(lim(c.max),c.int?0:2).replace(/,00$/,'')} ${c.u}.`;
+   Object.defineProperty(inp,'textContent',{get(){return inp.value},set(v){if(document.activeElement!==inp)inp.value=v}});
+   sp.replaceWith(inp);
+   const commit=()=>{
+     const m=String(inp.value).replace(/\s/g,'').replace(',','.').match(/^[+-]?\d*\.?\d+(e[+-]?\d+)?/i),v=m?parseFloat(m[0]):NaN,mn=lim(c.min),mx=lim(c.max);let err=null;
+     if(!Number.isFinite(v))err='keine gültige Zahl';
+     else if(v<mn||v>mx)err=`nur ${fmt(mn,c.int?0:1)} … ${fmt(mx,c.int?0:1)} ${c.u} möglich`+(c.why?` – ${c.why}`:'');
+     else if(c.int&&!Number.isInteger(v))err='nur ganze Zahlen';
+     else if(c.step&&Math.abs(v/c.step-Math.round(v/c.step))>1e-6)err=c.why;
+     if(err){inp.classList.add('bad');toast(`${c.n}: ${err}.`);setTimeout(()=>inp.classList.remove('bad'),1600);inp.blur();syncInputs();return}
+     c.set(v);inp.blur();after(c.a);
+   };
+   inp.addEventListener('change',commit);
+   inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();commit()}if(e.key==='Escape'){inp.blur();syncInputs()}});
+   inp.addEventListener('focus',()=>setTimeout(()=>inp.select(),0));
+ }
+}
+/* Gegeben / Gesucht: Formelnetz – gegebene Größen anwählen, berechenbare werden angezeigt */
+const SV={
+ d:['d','Werkstückdurchmesser','mm',1],n:['n','Drehzahl','min⁻¹',0],vc:['v_c','Schnittgeschwindigkeit','m/min',1],f:['f','Vorschub je Umdrehung','mm',3],
+ ap:['a_p','Schnitttiefe','mm',2],kr:['κr','Einstellwinkel','°',1],h:['h','Spanungsdicke','mm',3],b:['b','Spanungsbreite','mm',2],A:['A','Spanungsquerschnitt','mm²',3],
+ kc11:['k_c1.1','Hauptwert der spez. Schnittkraft (Werkstoff)','N/mm²',0],mc:['m_c','Werkstoffexponent','',2],kc:['k_c','spezifische Schnittkraft','N/mm²',0],K:['K','Korrekturfaktor','',3],
+ Fc:['F_c','Schnittkraft','N',0],Ff:['F_f','Vorschubkraft','N',0],Fp:['F_p','Passivkraft','N',0],Pc:['P_c','Schnittleistung','kW',2],eta:['η','Wirkungsgrad','',2],Pa:['P_a','Antriebsleistung','kW',2],
+ vf:['v_f','Vorschubgeschwindigkeit','mm/min',0],L:['L','Vorschubweg mit Anlauf','mm',1],i:['i','Anzahl Schnitte','',0],th:['t_h','Hauptnutzungszeit','min',2],
+ re:['r_ε','Eckenradius','mm',2],Rth:['R_th','theoretische Rautiefe','µm',2],Q:['Q','Zeitspanvolumen','cm³/min',1]};
+const sn=x=>Math.sin(x*DEG);
+const RULES=[
+ ['vc',['d','n'],'v_c = π · d · n / 1000',v=>Math.PI*v.d*v.n/1000],
+ ['n',['vc','d'],'n = 1000 · v_c / (π · d)',v=>1000*v.vc/(Math.PI*v.d)],
+ ['d',['vc','n'],'d = 1000 · v_c / (π · n)',v=>1000*v.vc/(Math.PI*v.n)],
+ ['h',['f','kr'],'h = f · sin κr',v=>v.f*sn(v.kr)],
+ ['b',['ap','kr'],'b = a_p / sin κr',v=>v.ap/sn(v.kr)],
+ ['A',['ap','f'],'A = a_p · f',v=>v.ap*v.f],
+ ['kc',['kc11','mc','h'],'k_c = k_c1.1 / h^m_c',v=>v.kc11/Math.pow(v.h,v.mc)],
+ ['Fc',['A','kc','K'],'F_c = A · k_c · K',v=>v.A*v.kc*v.K],
+ ['Pc',['Fc','vc'],'P_c = F_c · v_c / 60 000',v=>v.Fc*v.vc/60000],
+ ['Pa',['Pc','eta'],'P_a = P_c / η',v=>v.Pc/v.eta],
+ ['vf',['f','n'],'v_f = f · n',v=>v.f*v.n],
+ ['th',['L','i','vf'],'t_h = L · i / v_f',v=>v.L*v.i/v.vf],
+ ['Rth',['f','re'],'R_th = f² / (8 · r_ε) · 1000',v=>v.f*v.f/(8*v.re)*1000],
+ ['Q',['A','vc'],'Q = A · v_c',v=>v.A*v.vc],
+ ['Ff',['Fc','kr'],'F_f ≈ 0,5 · F_c · sin κr',v=>0.5*v.Fc*sn(v.kr)],
+ ['Fp',['Fc','kr'],'F_p ≈ 0,5 · F_c · |cos κr|',v=>0.5*v.Fc*Math.abs(Math.cos(v.kr*DEG))],
+ // umgestellte Formen
+ ['f',['h','kr'],'f = h / sin κr',v=>v.h/sn(v.kr)],
+ ['ap',['b','kr'],'a_p = b · sin κr',v=>v.b*sn(v.kr)],
+ ['A',['b','h'],'A = b · h',v=>v.b*v.h],
+ ['ap',['A','f'],'a_p = A / f',v=>v.A/v.f],
+ ['f',['A','ap'],'f = A / a_p',v=>v.A/v.ap],
+ ['h',['kc','kc11','mc'],'h = (k_c1.1 / k_c)^(1/m_c)',v=>Math.pow(v.kc11/v.kc,1/v.mc)],
+ ['Pc',['Pa','eta'],'P_c = P_a · η',v=>v.Pa*v.eta],
+ ['Fc',['Pc','vc'],'F_c = P_c · 60 000 / v_c',v=>v.Pc*60000/v.vc],
+ ['vc',['Pc','Fc'],'v_c = P_c · 60 000 / F_c',v=>v.Pc*60000/v.Fc],
+ ['A',['Fc','kc','K'],'A = F_c / (k_c · K)',v=>v.Fc/(v.kc*v.K)],
+ ['kc',['Fc','A','K'],'k_c = F_c / (A · K)',v=>v.Fc/(v.A*v.K)],
+ ['h',['Fc','b','kc11','mc','K'],'h = [F_c / (b · k_c1.1 · K)]<sup>1/(1 − m<sub>c</sub>)</sup>   (Kienzle nach h umgestellt)',v=>Math.pow(v.Fc/(v.b*v.kc11*v.K),1/(1-v.mc))],
+ ['b',['Fc','h','kc','K'],'b = F_c / (h · k_c · K)',v=>v.Fc/(v.h*v.kc*v.K)],
+ ['f',['vf','n'],'f = v_f / n',v=>v.vf/v.n],
+ ['n',['vf','f'],'n = v_f / f',v=>v.vf/v.f],
+ ['vf',['L','i','th'],'v_f = L · i / t_h',v=>v.L*v.i/v.th],
+ ['f',['Rth','re'],'f = √(8 · r_ε · R_th / 1000)',v=>Math.sqrt(8*v.re*v.Rth/1000)],
+ ['re',['Rth','f'],'r_ε = f² · 1000 / (8 · R_th)',v=>v.f*v.f*1000/(8*v.Rth)],
+ ['Fc',['Ff','kr'],'F_c ≈ F_f / (0,5 · sin κr)',v=>v.Ff/(0.5*sn(v.kr))]];
+S.given=new Set(['d','n','f','ap','kr','kc11','mc','K','eta','re','L','i']);S.gv={};S.task='std';
+function svDefaults(){const R=CALC,m=MATS[S.mat];return {d:+R.d.toFixed(1),n:R.n,vc:+R.vc.toFixed(1),f:R.f,ap:R.ap,kr:+R.kappa.toFixed(1),h:+R.h.toFixed(4),b:+R.b.toFixed(3),A:+R.A.toFixed(4),
+  kc11:m.kc,mc:m.mc,kc:Math.round(R.kc),K:+R.K.toFixed(3),Fc:Math.round(R.Fc),Ff:Math.round(R.Ff),Fp:Math.round(R.Fp),Pc:+R.Pc.toFixed(3),eta:ETA,Pa:PMAX,vf:Math.round(R.f*R.n),
+  L:+R.Lw.toFixed(1),i:R.i,th:+R.th.toFixed(3),re:R.re,Rth:6.3,Q:+R.Q.toFixed(1)}}
+function svClosure(){
+  const known=new Set(S.given),how={},val={};const d=svDefaults();for(const k of S.given)val[k]=S.gv[k]??d[k];
+  let ch=true;while(ch){ch=false;for(const r of RULES){const [o,ins,,fn]=r;if(known.has(o)||!ins.every(i=>known.has(i)))continue;const x=fn(val);if(!Number.isFinite(x))continue;known.add(o);how[o]=r;val[o]=x;ch=true}}
+  return {known,how,val};
+}
+const u_=t=>String(t).replace(/_([a-zεc.0-9]+)/g,'<sub>$1</sub>').replace(/\^(\([^)]*\)|[^ ·)]+)/g,'<sup>$1</sup>');
+function svFmt(k,x){const p=SV[k][3];return fmt(x,p)+(SV[k][2]?' '+SV[k][2]:'')}
+function renderTaskGiven(){
+  const box=$('#taskGiven'),{known,how}=svClosure();
+  $('#svGiven').innerHTML=Object.entries(SV).map(([k,s])=>`<button class="svc" data-k="${k}" aria-pressed="${S.given.has(k)}" data-tip="${s[1]}${s[2]?' in '+s[2]:''}">${u_(s[0])}</button>`).join('');
+  const calc=[...known].filter(k=>!S.given.has(k));
+  $('#svCalc').innerHTML=calc.length?calc.map(k=>`<button class="svc out" data-t="${k}" aria-pressed="${S.task===k}" data-tip="${SV[k][1]} berechnen">${u_(SV[k][0])}</button>`).join(''):'<span class="note">Mit dieser Auswahl lässt sich nichts weiter berechnen.</span>';
+  box.innerHTML=[...S.given].map(k=>`<label data-tip="${SV[k][1]}${SV[k][2]?' in '+SV[k][2]:''}"><span>${u_(SV[k][0])}${SV[k][2]?` <small style="color:var(--muted)">${SV[k][2]}</small>`:''}</span><input type="text" inputmode="decimal" data-g="${k}" value="${String(+((S.gv[k]??svDefaults()[k])).toFixed(4)).replace('.',',')}" aria-label="${SV[k][1]}"></label>`).join('');
+  $$('#svGiven .svc').forEach(b=>b.onclick=()=>{const k=b.dataset.k;if(S.given.has(k))S.given.delete(k);else S.given.add(k);if(S.task!=='std'&&!svClosure().known.has(S.task))S.task='std';else if(S.given.has(S.task))S.task='std';renderTaskGiven();renderSteps()});
+  $$('#svCalc .svc').forEach(b=>b.onclick=()=>{S.task=S.task===b.dataset.t?'std':b.dataset.t;renderTaskGiven();renderSteps()});
+  $$('#taskGiven input').forEach(i=>i.addEventListener('input',()=>{const v=parseFloat(i.value.replace(',','.'));if(Number.isFinite(v)){S.gv[i.dataset.g]=v;i.classList.remove('bad');renderSteps()}else i.classList.add('bad')}));
+  $('#svStd').setAttribute('aria-pressed',S.task==='std');
+}
+on('#svStd','click',()=>{S.task='std';renderTaskGiven();renderSteps()});
+on('#bTaskFill','click',()=>{S.gv={};renderTaskGiven();renderSteps()});
+const SVTAKE={f:['f übernehmen',f=>{let i=0;while(i<F_STEPS.length-1&&F_STEPS[i+1]<=f)i++;S.fC=null;S.fI=i}],
+ n:['n übernehmen (nächstkleinere Stufe)',n=>{let i=0;while(i<N_STEPS.length-1&&N_STEPS[i+1]<=n)i++;S.nC=null;S.nI=i}],
+ ap:['a_p übernehmen',ap=>{S.ap=Math.max(0.1,Math.floor(ap*10)/10)}]};
+function renderTaskSteps(){
+  const {how,val}=svClosure(),order=[],seen=new Set();
+  const walk=k=>{if(seen.has(k)||S.given.has(k))return;seen.add(k);const r=how[k];if(!r)return;r[1].forEach(walk);order.push(k)};walk(S.task);
+  const used=new Set();order.forEach(k=>how[k][1].forEach(i=>{if(S.given.has(i))used.add(i)}));
+  const head=`<li class="step"><div class="t">Gegeben → gesucht</div><div class="s">${[...used].map(k=>`${u_(SV[k][0])} = ${svFmt(k,val[k])}`).join(' ;  ')}</div><div class="r">gesucht: <b>${u_(SV[S.task][0])}</b> – ${SV[S.task][1]}</div></li>`;
+  $('#steps').innerHTML=head+order.map((k,i)=>{const r=how[k];return `<li class="step${i===order.length-1?' key':''}"><div class="t">${SV[k][1]}</div><div class="f">${u_(r[2])}</div><div class="s">mit ${r[1].map(j=>`${u_(SV[j][0])} = ${svFmt(j,val[j])}`).join(' ;  ')}</div><div class="r">${u_(SV[k][0])} = <b>${svFmt(k,val[k])}</b></div>${i===order.length-1&&SVTAKE[k]?`<button class="btn sm take" type="button">${u_(SVTAKE[k][0])}</button>`:''}</li>`}).join('');
+  const tb=$('#steps .take');if(tb)tb.onclick=()=>{SVTAKE[S.task][1](val[S.task]);syncInputs();recompute(false);toast('Wert in die Einstellungen übernommen.','info')};
+}
+setTimeout(renderTaskGiven,0);
+
 /* Plattenbaukasten-Fenster */
 function syncWin(){const w=$('#insWin');w.classList.toggle('min',S.winMin);w.classList.toggle('max',S.winMax);$('#wMax').textContent=S.winMax?'❐':'□';$('#wMin').textContent=S.winMin?'▢':'–';
   $('#wMin').title=S.winMin?'Wiederherstellen':'Minimieren';$('#wMax').title=S.winMax?'Verkleinern':'Maximieren';renderBuilder();requestAnimationFrame(()=>{resizeInsViewer();drawInsert()})}
@@ -2370,8 +2746,8 @@ function setOvr(i){i=clamp(i,0,OVR.length-1);S.ovrI=i;S.ovr=OVR[i];const k=$('#o
  k.addEventListener('wheel',e=>{e.preventDefault();setOvr(S.ovrI+(e.deltaY<0?1:-1))},{passive:false});
  k.addEventListener('keydown',e=>{if(e.key==='PageUp'||e.key==='+'){e.preventDefault();e.stopPropagation();setOvr(S.ovrI+1)}if(e.key==='PageDown'||e.key==='-'){e.preventDefault();e.stopPropagation();setOvr(S.ovrI-1)}})}
 const NCP=['pos','mda','auto','tech','alarm'],NCMODE={pos:'JOG',mda:'MDA',auto:'AUTOMATIK',tech:'PARAMETER',alarm:'DIAGNOSE'};
-function ncPage(p){S.ncp=p;$$('.crtpage').forEach(d=>d.hidden=d.dataset.p!==p);$$('[data-sk]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.sk===p));$('#crtMode').textContent=NCMODE[p]}
-$$('[data-sk]').forEach(b=>b.onclick=()=>ncPage(b.dataset.sk));
+function ncPage(p){S.ncp=p;$$('#panel .crtpage').forEach(d=>d.hidden=d.dataset.p!==p);$$('#panel [data-sk]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.sk===p));$('#crtMode').textContent=NCMODE[p]}
+$$('#panel [data-sk]').forEach(b=>b.onclick=()=>ncPage(b.dataset.sk));
 on('#skPrev','click',()=>ncPage(NCP[(NCP.indexOf(S.ncp)+4)%5]));on('#skNext','click',()=>ncPage(NCP[(NCP.indexOf(S.ncp)+1)%5]));
 on('#crtAlarm','click',()=>ncPage('alarm'));
 {const r=$('#kRapid');const dn=e=>{e.preventDefault();M.shift=true;r.setPointerCapture&&r.setPointerCapture(e.pointerId)},up=()=>{M.shift=false};
@@ -2407,6 +2783,7 @@ $$('#angOpChips .chip').forEach(b=>b.onclick=()=>setAngOp(b.dataset.aop));
 function applyPreset(rough){
   const t=TL.def,hss=isHSS(t);
   const lim=TL.raw.insert&&t.kind!=='round'?0.6*TL.raw.l*Math.sin((TL.kr||90)*DEG):4;
+  S.fC=null;S.nC=null;
   if(S.op==='stechen'){S.fI=F_STEPS.indexOf(rough?0.1:0.05)}
   else{S.ap=rough?Math.max(0.5,Math.min(hss?2:3.5,Math.floor(lim*10)/10)):0.5;S.fI=F_STEPS.indexOf(rough?(hss?0.25:0.4):(hss?0.08:0.1))}
   S.passes=1;CALC=calc();
@@ -2420,7 +2797,7 @@ on('#selRe','change',e=>{S.re[S.tool]=+e.target.value;buildTL();buildToolMesh();
 on('#selCm','change',e=>{S.cm=e.target.value;recompute(false)});
 on('#selWear','change',e=>{S.wear=+e.target.value;recompute(false)});
 on('#bNrec','click',()=>{const r=CALC.rec;if(!r){toast('Für diese Kombination gibt es keinen Richtwert.');return}
-  const nt=r*1000/(Math.PI*CALC.d);let i=0;while(i<N_STEPS.length-1&&N_STEPS[i+1]<=nt)i++;S.nI=i;syncInputs();recompute(false);
+  const nt=r*1000/(Math.PI*CALC.d);let i=0;while(i<N_STEPS.length-1&&N_STEPS[i+1]<=nt)i++;S.nC=null;S.nI=i;syncInputs();recompute(false);
   toast(`n = ${fmt0(nt)} min⁻¹ berechnet → nächstkleinere Getriebestufe ${N_STEPS[i]} min⁻¹.`,'info')});
 on('#ckF','change',e=>S.showF=e.target.checked);on('#ckA','change',e=>S.showA=e.target.checked);
 on('#bStart','click',startCut);on('#bStart2','click',startCut);
@@ -2431,7 +2808,7 @@ on('#selSpeed','change',e=>S.speed=+e.target.value);
 function syncFeedBtns(){$('#bFeedZ').setAttribute('aria-pressed',M.feedZ);$('#bFeedX').setAttribute('aria-pressed',M.feedX)}
 on('#bFeedZ','click',()=>{M.q=[];M.feedX=false;M.feedZ=!M.feedZ;if(M.feedZ&&!M.spindle){M.feedZ=false;toast('Erst die Spindel einschalten.')}syncFeedBtns()});
 on('#bFeedX','click',()=>{M.q=[];M.feedZ=false;M.feedX=!M.feedX;if(M.feedX&&!M.spindle){M.feedX=false;toast('Erst die Spindel einschalten.')}syncFeedBtns()});
-$$('.jog button[data-jog]').forEach(b=>{
+$$('#panel .jog button[data-jog]').forEach(b=>{
   const [du,dv]=b.dataset.jog.split(',').map(Number);
   const start=e=>{e.preventDefault();M.q=[];M.du=du;M.dv=dv;b.setPointerCapture&&b.setPointerCapture(e.pointerId)};
   const end=()=>{M.du=M.dv=0};
@@ -2442,17 +2819,18 @@ const PRESSED=new Set(),CAMK=new Set(['w','a','s','d','q','e']);
 // Mehrere Pfeiltasten zugleich: z. B. ← + ↑ fährt Bett- und Planschlitten gleichzeitig (schräg)
 function keyMove(){let du=0,dv=0;for(const k of PRESSED)if(KEYS[k]){du+=KEYS[k][0];dv+=KEYS[k][1]}M.du=Math.sign(du);M.dv=Math.sign(dv)}
 window.addEventListener('keydown',e=>{
+  if(window.APP==='fraes')return;
   if(e.target.closest&&e.target.closest('input,select,textarea'))return;
   M.shift=e.shiftKey;const k=e.key.length===1?e.key.toLowerCase():e.key;
   if(KEYS[k]){e.preventDefault();if(!PRESSED.has(k)){PRESSED.add(k);M.q=[];keyMove()}}
   else if(CAMK.has(k)&&!e.ctrlKey&&!e.altKey&&!e.metaKey){e.preventDefault();PRESSED.add(k)}
   else if(e.key===' '&&e.target===canvas){e.preventDefault();setSpindle(!M.spindle)}
 });
-window.addEventListener('keyup',e=>{M.shift=e.shiftKey;const k=e.key.length===1?e.key.toLowerCase():e.key;PRESSED.delete(k);if(KEYS[k])keyMove()});
+window.addEventListener('keyup',e=>{if(window.APP==='fraes')return;M.shift=e.shiftKey;const k=e.key.length===1?e.key.toLowerCase():e.key;PRESSED.delete(k);if(KEYS[k])keyMove()});
 window.addEventListener('blur',()=>{PRESSED.clear();M.du=M.dv=0});
-$$('.tab').forEach(b=>b.onclick=()=>{
-  $$('.tab').forEach(x=>x.setAttribute('aria-selected',x===b));
-  $$('.page').forEach(p=>p.hidden=p.id!=='tab-'+b.dataset.tab);
+$$('#panel .tab').forEach(b=>b.onclick=()=>{
+  $$('#panel .tab').forEach(x=>x.setAttribute('aria-selected',x===b));
+  $$('#panel .page').forEach(p=>p.hidden=p.id!=='tab-'+b.dataset.tab);
   requestAnimationFrame(()=>{renderPanel();drawAngles();drawStock();if(S.tool==='wsp')drawInsert()});
 });
 $('#steps').addEventListener('mouseover',e=>{const li=e.target.closest('.step');const k=li?li.dataset.hl||null:null;if(k!==S.hl){S.hl=k;drawSection()}});
@@ -2470,7 +2848,7 @@ function toast(msg,kind){(window.__toasts||(window.__toasts=[])).push(msg);const
 let camAnim=null;
 function tipWorld(){return new THREE.Vector3(X0+M.u,0,M.v)}
 function setView(v){
-  S.view=v;$$('.vbtn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===v));if(typeof syncCamBtns==='function')syncCamBtns();
+  S.view=v;$$('#stage .vbtn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===v));if(typeof syncCamBtns==='function')syncCamBtns();
   const tp=tipWorld();let pos,tgt;
   if(v==='gesamt'){tgt=new THREE.Vector3(85,-25,10);pos=new THREE.Vector3(340,380,330)}
   else if(v==='nah'){tgt=tp.clone().add(new THREE.Vector3(-8,0,-6));pos=tp.clone().add(new THREE.Vector3(62,72,4))}
@@ -2480,7 +2858,7 @@ function setView(v){
   const clip=v==='schnitt';TOOLMATS.concat([wpMat,wpMatRing]).forEach(m=>{m.clippingPlanes=clip?[secPlane]:[]});
   camAnim={p0:camera.position.clone(),t0:controls.target.clone(),p1:pos,t1:tgt,k:0};
 }
-$$('.vbtn').forEach(b=>b.onclick=()=>setView(b.dataset.view));
+$$('#stage .vbtn').forEach(b=>b.onclick=()=>setView(b.dataset.view));
 let lastTip=null;
 renderer.localClippingEnabled=true;
 const secPlane=new THREE.Plane(new THREE.Vector3(0,0,-1),0);
@@ -2549,6 +2927,7 @@ function resize(){const r=stage.getBoundingClientRect();renderer.setSize(r.width
 new ResizeObserver(()=>{resize();if(CALC){renderPanel();drawAngles()}}).observe(stage);
 let last=performance.now(),hudT=0;
 function frame(now){
+  if(window.APP==='fraes'){last=now;requestAnimationFrame(frame);return}
   const dt=Math.min(0.05,(now-last)/1000);last=now;
   if(TL&&W.R)simulate(dt);
   updateGeo(false);
@@ -2624,8 +3003,700 @@ resize();CALC=calc();recompute(true);
 updZRef();takeIst();setOvr(OVR.indexOf(100));ncPage('pos');
 requestAnimationFrame(frame);
 setTimeout(()=>{if(!M.q.length&&!M.spindle)startCut()},900);
+window.DW={MATS,CUT,WEAR,ISOTXT,prep,colors,cssVar,fmt,fmt0,fmt2,fmt3,dimH,dimV,arrowHead,sym,clamp,lin,DEG};
 window.__dw={camSet(p,t){camAnim=null;S.view='frei';camera.position.set(...p);controls.target.set(...t)},S,M,W,LIVE,INS,fixIns,toolModel,haltAll,reclamp,setSpindle,tailHit,lend,get TLb(){return TL.bounds},get cam(){return [camera.position.toArray().map(v=>+v.toFixed(1)),controls.target.toArray().map(v=>+v.toFixed(1)),!!camAnim]},get CALC(){return CALC},get TL(){return TL},startCut,selectTool,loadStock,setView,syncInputs,recompute,
   snap(){renderer.render(scene,camera);return canvas.toDataURL('image/png')},
   fast(n,cb){let mx=0,s=0,c=0;for(let i=0;i<n&&(M.q.length||i<2);i++){simulate(0.05);updateGeo(false);if(LIVE.cut&&M.status==='Vorschub'){s+=LIVE.Fc;c++;mx=Math.max(mx,LIVE.Fc)}}return{avg:s/Math.max(1,c),max:mx,left:M.q.length}}};
 })();
+</script>
+<script>
+/* ================== FRÄSWERKSTATT ================== */
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+window.APP='dreh';
+const PLATE_D=$('#plate').innerHTML,PLATE_F='Konsolfräsmaschine, senkrecht · Tisch 800 × 220 mm · P<sub>Motor</sub> 5,5 kW · η 0,8 · n 45–2800 min⁻¹';
+let inited=false;
+function switchApp(a){
+  window.APP=a;$$('.app').forEach(b=>b.setAttribute('aria-selected',b.dataset.app===a));
+  $('#drehMain').hidden=a!=='dreh';$('#fraesMain').hidden=a!=='fraes';$('#plate').innerHTML=a==='dreh'?PLATE_D:PLATE_F;
+  if(a==='fraes'){if(!inited)init();requestAnimationFrame(()=>{resize();renderAll()})}
+}
+$$('.app').forEach(b=>b.onclick=()=>switchApp(b.dataset.app));
+
+const {MATS,CUT,WEAR,ISOTXT,prep,colors,cssVar,fmt,fmt0,fmt2,fmt3,dimH,dimV,arrowHead,sym,clamp,lin,DEG}=window.DW;
+const N_ST=[45,63,90,125,180,250,355,500,710,1000,1400,2000,2800];
+const VF_ST=[16,22,31.5,45,63,90,125,180,250,355,500,710,1000];
+const PMAXF=5.5,ETAF=0.8,RAPIDF=60;let G=0.5;
+const MT=[
+ {id:'sf10',name:'Schaftfräser',code:'DIN 844 · HSS · Ø10 · z 4',kind:'end',D:10,z:4,kr:90,gamma:12,lc:22,cm:'HSS',center:false,helix:30,fz:[0.02,0.06],
+  use:'Universal für Absätze, Konturen und flache Taschen. Schneidet am Umfang und an der Stirn, aber nicht über die Mitte – nicht senkrecht eintauchen.'},
+ {id:'sf12',name:'Schaftfräser',code:'DIN 844 · HSS · Ø12 · z 4',kind:'end',D:12,z:4,kr:90,gamma:12,lc:26,cm:'HSS',center:false,helix:30,fz:[0.02,0.06],
+  use:'Ø12 passt zur T-Nut 12 (DIN 650): damit zuerst die Halsnut auf volle Tiefe fräsen, danach mit dem T-Nutenfräser den Grund verbreitern.'},
+ {id:'sf20',name:'Schaftfräser',code:'DIN 844 · HSS · Ø20 · z 4',kind:'end',D:20,z:4,kr:90,gamma:12,lc:38,cm:'HSS',center:false,helix:30,fz:[0.03,0.08],
+  use:'Größerer Schaftfräser für Absätze und breitere Flächen. Steifer als Ø10, mehr Spanvolumen.'},
+ {id:'lf8',name:'Langlochfräser',code:'DIN 327 · HSS · Ø8 · z 2',kind:'end',D:8,z:2,kr:90,gamma:10,lc:14,cm:'HSS',center:true,helix:20,fz:[0.02,0.05],
+  use:'Zweischneider, schneidet über die Mitte: taucht senkrecht ein. Für Passfedernuten und Langlöcher.'},
+ {id:'vhm12',name:'VHM-Schaftfräser',code:'Vollhartmetall · Ø12 · z 3',kind:'end',D:12,z:3,kr:90,gamma:8,lc:26,cm:'HM',center:true,helix:45,fz:[0.04,0.1],
+  use:'Hartmetall: hohe Schnittgeschwindigkeit, ziehender Schnitt durch 45° Drall. Schneidet über die Mitte.'},
+ {id:'ws40',name:'Walzenstirnfräser',code:'DIN 1880 · HSS · Ø40 · z 8',kind:'end',D:40,z:8,kr:90,gamma:12,lc:32,cm:'HSS',center:false,helix:30,fz:[0.03,0.08],
+  use:'Breite Flächen und hohe Absätze mit großem Spanvolumen. Aufsteckfräser auf einem Fräsdorn.'},
+ {id:'mk',name:'Wendeplatten',code:'Konfigurator',kind:'face',D:63,z:5,kr:45,gamma:6,lc:6,cm:'HM',center:false,helix:0,fz:[0.08,0.2],use:''},
+ {id:'kf10',name:'Radiusfräser',code:'Kugelkopf · HM · Ø10 · z 2',kind:'ball',D:10,z:2,kr:90,gamma:8,lc:18,cm:'HM',center:true,helix:30,fz:[0.04,0.1],
+  use:'Kugelkopf für Freiformflächen und Hohlkehlen. Hinterlässt Rillen mit Radius D/2.'},
+ {id:'tn21',name:'T-Nutenfräser',code:'DIN 851 · HSS · Ø21 × 9 · z 6',kind:'tslot',D:21,z:6,kr:90,gamma:10,lc:9,b:9,dn:10,reach:22,cm:'HSS',center:false,helix:0,fz:[0.01,0.03],
+  use:'Fräst den breiten Grund einer T-Nut 12. Vorher die Halsnut mit dem Schaftfräser Ø12 auf volle Tiefe fräsen – der Hals (Ø10) läuft darin, die kreuzverzahnte Scheibe schneidet seitlich unter die Kanten. Nur in Längsrichtung von der Seite ein- und ausfahren.'}];
+/* Messerköpfe: Kopf-Typ + Durchmesser + Zähnezahl frei wählbar, Platten am Umfang */
+const HEADS={
+ '45':{grp:'Messerköpfe',body:'arbor',n:'Planfräskopf 45°',ins:'SEKN 1203 AFTN',kr:45,a:12.7,s:3.18,lc:6,gamma:6,fz:[0.1,0.25],
+   use:'κr = 45°: dünne, breite Späne (h = f_z · sin 45°), Kraft verteilt sich auf Vorschub- und Axialrichtung, Plattenecken werden geschont. Der Standard zum Planfräsen; a_p bis 6 mm.'},
+ '75':{grp:'Messerköpfe',body:'arbor',n:'Planfräskopf 75°',ins:'SPKN 1203 EDR',kr:75,a:12.7,s:3.18,lc:9,gamma:6,fz:[0.08,0.2],
+   use:'κr = 75°: Kompromiss – größere Schnitttiefe als 45°, noch etwas dünnere Späne als 90°. Für Schruppen großer Flächen; a_p bis 9 mm.'},
+ '90':{grp:'Messerköpfe',body:'arbor',n:'Eckfräskopf 90°',ins:'APKT 1604 PDR',kr:90,a:16,wd:9.5,s:4.76,lc:14,gamma:12,fz:[0.08,0.18],
+   use:'κr = 90°: fräst rechtwinklige Absätze bis 14 mm Tiefe. Der Span ist so dick wie f_z, die Kraft wirkt ganz in Vorschubrichtung – wenig Druck nach oben, gut bei dünnwandigen Teilen.'},
+ 'R':{grp:'Messerköpfe',body:'arbor',n:'Rundplatten-Fräskopf',ins:'RCKT 1204 M0',kr:0,ri:6,s:4.76,lc:6,gamma:10,fz:[0.1,0.3],
+   use:'Rundplatten: sehr stabile Schneide, κr hängt von a_p ab (κr = arccos(1 − a_p / r)). Bei kleinem a_p sehr dünne Späne → hoher Zahnvorschub möglich. Für Schruppen und zähe Werkstoffe.'},
+ 'E90':{grp:'Schaftfräser mit Platten',body:'shank',n:'Eckfräser 90° mit Schaft',ins:'APKT 1003 PDR',kr:90,a:10,wd:6.5,s:3.18,lc:9,gamma:12,fz:[0.06,0.15],Ds:[16,20,25,32],
+   use:'Wendeplatten-Eckfräser mit Zylinderschaft: rechtwinklige Absätze, Taschenränder und Nuten ab Ø16. Schneidet nicht über die Mitte – seitlich oder schräg eintauchen. a_p bis 9 mm.'},
+ 'F45':{grp:'Fasenfräser',body:'shank',fase:true,n:'Fasenfräser 90°',ins:'SPMT 060204',kr:45,a:6.35,s:2.38,lc:3.5,gamma:6,fz:[0.04,0.1],Ds:[12,16,20,25],
+   use:'Fasenfräser mit 90° Spitzenwinkel (κr = 45°): bricht Kanten und fräst 45°-Fasen bis 3,5 mm. D_c ist der kleinste Schneidendurchmesser an der Spitze – v_c zählt am mittleren Fasendurchmesser. Die Spitze läuft 1 mm neben der Kante, damit dort nicht mit v_c ≈ 0 geschnitten wird.'},
+ 'F60':{grp:'Fasenfräser',body:'shank',fase:true,n:'Fasenfräser 60°',ins:'SPMT 060204',kr:60,a:6.35,s:2.38,lc:3.5,gamma:6,fz:[0.04,0.1],Ds:[12,16,20,25],
+   use:'Fasenfräser mit 60° Spitzenwinkel (κr = 60°): steile Fase, z. B. für Senkungen und Schwalbenschwanz-Kanten. Fasentiefe bis 3,5 mm, Fasenbreite = Tiefe / tan 60°.'}};
+const HEAD_D=[40,50,63,80,100];
+const dsOf=H=>H.Ds||HEAD_D,zRange=(H,D)=>H.body==='shank'?[1,Math.max(1,Math.floor(D/7.5))]:[2,Math.min(12,Math.floor(Math.PI*D/18))];
+/* Plattenkontur im r-z-Schnitt (r ab Achse, z ab Schneidenecke nach oben) */
+function insPts(H,Rc){
+  if(H.ri)return null;
+  if(H.wd){const e2=[Math.cos(175*DEG),Math.sin(175*DEG)];return [[Rc,0],[Rc,H.a],[Rc+H.wd*e2[0],H.a+H.wd*e2[1]],[Rc+H.wd*e2[0],H.wd*e2[1]]]}
+  const k=H.kr*DEG,e1=[Math.cos(k),Math.sin(k)],e2=[Math.cos(k+Math.PI/2),Math.sin(k+Math.PI/2)],a=H.a;
+  return [[Rc,0],[Rc+a*e1[0],a*e1[1]],[Rc+a*e1[0]+a*e2[0],a*e1[1]+a*e2[1]],[Rc+a*e2[0],a*e2[1]]];
+}
+let _hk=null,_ht=null;
+function headTool(){
+  const h=F.head,key=h.typ+'|'+h.D+'|'+h.z;if(key===_hk)return _ht;
+  const H=HEADS[h.typ],Rc=h.D/2,pts=insPts(H,Rc);
+  const Ro=H.ri?Rc+H.ri:Math.max(Rc,...pts.map(p=>p[0])),rIn=H.ri?Rc-H.ri:Math.min(...pts.map(p=>p[0])),hIns=H.ri?2*H.ri:Math.max(...pts.map(p=>p[1]));
+  const k=H.kr*DEG;
+  const zoff=H.ri?(r=>r<=Rc?0:H.ri-Math.sqrt(Math.max(0,H.ri*H.ri-(r-Rc)**2))):H.kr>=89.9?(()=>0):(r=>r<=Rc?0:(r-Rc)*Math.tan(k));
+  const sh=H.body==='shank',bd=sh?{yb:Math.min(2,hIns*0.3),bh:hIns+4,bodyR:H.fase?Rc-0.5:Rc-1.2,shR:h.D>=25?10:h.D>=16?8:6,shL:45}
+    :{yb:Math.min(4,hIns*0.3),bh:Math.max(30,Ro*0.5),bodyR:H.kr<89?Rc-1.5:Rc-1.2,shR:16,shL:50};bd.top=bd.yb+bd.bh+bd.shL+60;
+  _ht={id:'mk',name:H.n,code:`Ø${h.D} · z ${h.z} · ${H.ins}`,kind:'face',head:h.typ,H,D:h.D,z:h.z,kr:H.kr,gamma:H.gamma,lc:H.lc,clr:H.fase?hIns:H.lc,cm:'HM',center:false,helix:0,fz:H.fz,use:H.use,
+    Rc,Ro,rIn,hIns,pts,zoff,bd};_hk=key;return _ht;
+}
+const MTB=Object.fromEntries(MT.map(t=>[t.id,t]));
+const F={L:120,B:80,H:40,mat:'C45',tool:'sf20',cm:'HSS',nI:6,vfI:5,nC:null,vfC:null,op:'schulter',lauf:'gegen',ap:3,ae:6,t:6,sy:40,sl:80,wear:0,ovr:100,ovrI:17,speed:1,view:'gesamt',mp:'pos',mdaG:0,head:{typ:'45',D:63,z:5}};
+const MM={x:-20,y:-20,z:60,q:[],spindle:false,rot:0,rapid:false,status:'Bereit',jx:0,jy:0,jz:0,shift:false,job:null,last:{x:0,y:0,z:0}};
+const LIVE={Pc:0,Fc:0,cut:false,cutT:0};
+const nVal=()=>F.nC??N_ST[F.nI],vfVal=()=>F.vfC??VF_ST[F.vfI],tool=()=>F.tool==='mk'?headTool():MTB[F.tool];
+let R3,scene,camera,controls,tableG,blockMesh,toolG,cutterG,quill,chipIM,CALC=null,WP={},camAnim=null;
+
+function toast(m,kind){const t=$('#mtoast');t.textContent=m;t.className=kind==='info'?'info':'';t.hidden=false;clearTimeout(toast.tm);toast.tm=setTimeout(()=>t.hidden=true,kind==='info'?2600:4200)}
+
+/* ---------- 3D ---------- */
+function box(w,h,d,m,x,y,z,p){const g=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);g.position.set(x,y,z);p.add(g);return g}
+function cyl(r1,r2,h,m,x,y,z,p,seg=40){const g=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,seg),m);g.position.set(x,y,z);p.add(g);return g}
+const M3={};
+function init(){
+  inited=true;const canvas=$('#mgl');
+  R3=new THREE.WebGLRenderer({canvas,antialias:true});R3.setPixelRatio(Math.min(2,devicePixelRatio||1));R3.outputEncoding=THREE.sRGBEncoding;R3.toneMapping=THREE.ACESFilmicToneMapping;R3.toneMappingExposure=0.95;
+  scene=new THREE.Scene();scene.background=new THREE.Color(cssVar('--scene')||'#d7ddd8');
+  if(THREE.RoomEnvironment){try{const pm=new THREE.PMREMGenerator(R3);scene.environment=pm.fromScene(new THREE.RoomEnvironment(),0.04).texture;pm.dispose()}catch(e){}}
+  scene.add(new THREE.HemisphereLight(0xf2f5ff,0x4a4438,0.35));const sun=new THREE.DirectionalLight(0xffffff,0.6);sun.position.set(300,600,500);scene.add(sun);
+  camera=new THREE.PerspectiveCamera(38,1,2,6000);camera.position.set(330,260,360);
+  controls=new THREE.OrbitControls(camera,canvas);controls.target.set(40,10,20);controls.enableDamping=true;controls.dampingFactor=0.12;
+  const mk=(c,r,m)=>{const x=new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:m});x.color.convertSRGBToLinear();return x};
+  Object.assign(M3,{paint:mk(0x56706c,0.6,0.1),paintD:mk(0x3e514e,0.65,0.1),steel:mk(0xb9c0c6,0.35,0.6),dark:mk(0x2a2e31,0.5,0.4),black:mk(0x17191b,0.6,0.2),hss:mk(0xa9b0b7,0.3,0.75),hm:mk(0xc9a440,0.35,0.6),holder:mk(0x58616b,0.45,0.5),vise:mk(0x2f4a66,0.5,0.35)});
+  const mach=new THREE.Group();scene.add(mach);
+  // Ständer, Kopf, Konsole (fest)
+  box(320,1000,300,M3.paint,0,0,-420,mach);box(260,160,420,M3.paint,0,330,-170,mach);
+  box(500,260,320,M3.paintD,0,-200,-40,mach);box(560,40,360,M3.paint,0,-90,-40,mach);
+  quill=cyl(42,42,320,M3.steel,0,0,0,scene,40);
+  // Tisch mit Schraubstock (bewegt sich)
+  tableG=new THREE.Group();scene.add(tableG);
+  toolG=new THREE.Group();scene.add(toolG);cutterG=new THREE.Group();toolG.add(cutterG);
+  // Späne
+  const cg=new THREE.TorusGeometry(1.4,0.28,5,10,Math.PI*1.3);const cm=new THREE.MeshStandardMaterial({color:0xffffff,roughness:0.35,metalness:0.7});
+  chipIM=new THREE.InstancedMesh(cg,cm,300);for(let i=0;i<300;i++)chipIM.setColorAt(i,new THREE.Color(0.7,0.7,0.7));chipIM.count=0;chipIM.frustumCulled=false;scene.add(chipIM);
+  buildBlock();buildTool();
+  new ResizeObserver(resize).observe($('#mstage'));resize();
+  requestAnimationFrame(frame);
+}
+function buildTable(){
+  tableG.clear();const L=F.L,B=F.B,H=F.H;
+  box(800,24,220,M3.paint,L/2,-42,B/2,tableG);
+  for(let i=-1;i<=1;i++)box(800,1,12,M3.dark,L/2,-29.5,B/2+i*60,tableG);
+  box(Math.max(170,L+40),22,B+90,M3.vise,L/2,-19,B/2,tableG);                         // Schraubstock-Grundkörper
+  box(Math.max(170,L+40)-30,8,B-6,M3.steel,L/2,-4,B/2,tableG);                        // Parallelunterlagen
+  const jh=Math.max(5,Math.min(H*0.5,28));
+  box(150,jh+8,22,M3.vise,L/2,(jh-8)/2,-11,tableG);box(150,jh+8,22,M3.vise,L/2,(jh-8)/2,B+11,tableG);   // Backen
+  const sp=cyl(6,6,80,M3.steel,L/2,-8,B+60,tableG,12);sp.rotation.x=Math.PI/2;
+  const kn=box(70,8,8,M3.black,L/2,-8,B+100,tableG);
+}
+function buildBlock(){
+  buildTable();
+  const L=F.L,B=F.B,H=F.H;G=(L/0.5+1)*(B/0.5+1)>90000?1:0.5;
+  const NX=Math.round(L/G)+1,NY=Math.round(B/G)+1;
+  WP={NX,NY,h:new Float32Array(NX*NY).fill(H),mach:new Uint8Array(NX*NY),u0:new Float32Array(NX*NY),u1:new Float32Array(NX*NY),upDirty:true,dLo:[0,0],dHi:[NX-1,NY-1]};
+  // je Zelle ein Deckel-Viereck + Wände zu den Nachbarn (Reihen hintereinander, damit Teil-Uploads zusammenhängen)
+  const QR=3*NY+1,NQ=NY+NX*QR,pos=new Float32Array(NQ*12),col=new Float32Array(NQ*12),idx=new Uint32Array(NQ*6);
+  for(let q=0;q<NQ;q++){const a=q*4,k=q*6;idx[k]=a;idx[k+1]=a+1;idx[k+2]=a+2;idx[k+3]=a;idx[k+4]=a+2;idx[k+5]=a+3}
+  const XE=new Float32Array(NX+1),YE=new Float32Array(NY+1);for(let i=0;i<=NX;i++)XE[i]=clamp((i-0.5)*G,0,L);for(let j=0;j<=NY;j++)YE[j]=clamp((j-0.5)*G,0,B);
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3).setUsage(THREE.DynamicDrawUsage));g.setAttribute('color',new THREE.BufferAttribute(col,3).setUsage(THREE.DynamicDrawUsage));g.setIndex(new THREE.BufferAttribute(idx,1));
+  Object.assign(WP,{QR,NQ,pos,col,geo:g,XE,YE});
+  updateBlock(true);
+  if(blockMesh)tableG.remove(blockMesh);
+  blockMesh=new THREE.Mesh(g,new THREE.MeshStandardMaterial({vertexColors:true,roughness:0.4,metalness:0.55,flatShading:true,side:THREE.DoubleSide}));blockMesh.frustumCulled=false;tableG.add(blockMesh);
+  if(upIM){tableG.remove(upIM);tableG.remove(capIM);upIM=capIM=null}
+  MM.x=-tool().D/2-15;MM.y=-tool().D/2-15;MM.z=H+25;MM.q=[];
+}
+function updateBlock(all){
+  const {NX,NY,QR,h,mach,pos,col,XE,YE}=WP,m=MATS[F.mat],rc=m.raw.map(lin),cc=m.cut.map(lin);
+  const i0=all?0:Math.max(0,WP.dLo[0]),i1=all?NX-1:Math.min(NX-1,WP.dHi[0]);
+  if(i1<i0)return;
+  // Ecken: Mittel der Nachbarzellen, die höchstens T tiefer/höher liegen → Hänge bleiben glatt, Stufen werden senkrechte, scharfe Kanten
+  const T=2.5*G;
+  const ch=(i,j,di,dj)=>{const hc=h[i*NY+j];let s=hc,n=1;const a=i+di,b=j+dj;
+    if(a>=0&&a<NX){const v=h[a*NY+j];if(Math.abs(v-hc)<=T){s+=v;n++}}
+    if(b>=0&&b<NY){const v=h[i*NY+b];if(Math.abs(v-hc)<=T){s+=v;n++}}
+    if(a>=0&&a<NX&&b>=0&&b<NY){const v=h[a*NY+b];if(Math.abs(v-hc)<=T){s+=v;n++}}
+    return s/n};
+  const put=(q,ax,ay,az,bx,by,bz,cx,cy,cz,dx,dy,dz,c)=>{const o=q*12;pos[o]=ax;pos[o+1]=ay;pos[o+2]=az;pos[o+3]=bx;pos[o+4]=by;pos[o+5]=bz;pos[o+6]=cx;pos[o+7]=cy;pos[o+8]=cz;pos[o+9]=dx;pos[o+10]=dy;pos[o+11]=dz;
+    for(let k=0;k<4;k++){col[o+k*3]=c[0];col[o+k*3+1]=c[1];col[o+k*3+2]=c[2]}};
+  const RAWW=[rc[0]*0.82,rc[1]*0.82,rc[2]*0.82],CUTW=[cc[0]*0.86,cc[1]*0.86,cc[2]*0.86],RAWT=[rc[0]*0.95,rc[1]*0.95,rc[2]*0.95],CUT0=[cc[0],cc[1],cc[2]],CUT1=[cc[0]*0.97,cc[1]*0.97,cc[2]*0.97];
+  const wc=(a,b)=>b<0?RAWW:(mach[a]||mach[b])?CUTW:RAWW;
+  const ra=all?0:Math.max(0,i0-2),rb=all?NX-1:Math.min(NX-1,i1+1);
+  if(ra===0)for(let j=0;j<NY;j++){const c=j,z0=YE[j],z1=YE[j+1];put(j,0,0,z0,0,0,z1,0,ch(0,j,-1,1),z1,0,ch(0,j,-1,-1),z0,RAWW)}
+  for(let i=ra;i<=rb;i++){const qb=NY+i*QR,x0=XE[i],x1=XE[i+1];
+    for(let j=0;j<NY;j++){const c=i*NY+j,z0=YE[j],z1=YE[j+1];
+      const a=ch(i,j,-1,-1),b=ch(i,j,1,-1),d=ch(i,j,1,1),e=ch(i,j,-1,1);
+      put(qb+j,x0,a,z0,x1,b,z0,x1,d,z1,x0,e,z1,mach[c]?((i>>1)&1?CUT1:CUT0):RAWT);
+      // Wand rechts (zu Zelle i+1 bzw. außen)
+      if(i<NX-1)put(qb+NY+j,x1,b,z0,x1,d,z1,x1,ch(i+1,j,-1,1),z1,x1,ch(i+1,j,-1,-1),z0,wc(c,c+NY));
+      else put(qb+NY+j,x1,b,z0,x1,d,z1,x1,0,z1,x1,0,z0,RAWW);
+    }
+    // Wände quer (zwischen j-1 und j), j = 0 und j = NY sind Außenwände
+    for(let jj=0;jj<=NY;jj++){const z=YE[jj],q=qb+2*NY+jj;
+      const lo=jj>0?[ch(i,jj-1,-1,1),ch(i,jj-1,1,1)]:[0,0],hi=jj<NY?[ch(i,jj,-1,-1),ch(i,jj,1,-1)]:[0,0];
+      put(q,x0,lo[0],z,x1,lo[1],z,x1,hi[1],z,x0,hi[0],z,jj===0||jj===NY?RAWW:wc(i*NY+jj-1,i*NY+jj))}
+  }
+  const s0=ra===0?0:NY+ra*QR,s1=NY+(rb+1)*QR,pa=WP.geo.attributes.position,ca=WP.geo.attributes.color;
+  if(all){pa.updateRange.offset=0;pa.updateRange.count=-1;ca.updateRange.offset=0;ca.updateRange.count=-1}
+  else{pa.updateRange.offset=ca.updateRange.offset=s0*12;pa.updateRange.count=ca.updateRange.count=(s1-s0)*12}
+  pa.needsUpdate=true;ca.needsUpdate=true;
+  WP.dLo=[1e9,1e9];WP.dHi=[-1,-1];
+  if(WP.upDirty)updateUpper();
+}
+/* Überhänge (Material über einem Hohlraum, z. B. die Kanten einer T-Nut) als Quader-Instanzen */
+let upIM=null,capIM=null;
+function updateUpper(){
+  WP.upDirty=false;const {NX,NY,u0,u1,mach}=WP,list=[];for(let c=0;c<NX*NY;c++)if(u1[c]>u0[c]+1e-3)list.push(c);
+  const n=list.length,m=MATS[F.mat];
+  if(!upIM||upIM.userData.cap<n){
+    if(upIM){tableG.remove(upIM);tableG.remove(capIM)}const cap=Math.max(256,Math.ceil(n*1.5));
+    const bg=new THREE.BoxGeometry(1,1,1);bg.translate(0,0.5,0);
+    const bm=new THREE.MeshStandardMaterial({roughness:0.4,metalness:0.55});
+    upIM=new THREE.InstancedMesh(bg,bm,cap);upIM.userData.cap=cap;upIM.frustumCulled=false;for(let i=0;i<cap;i++)upIM.setColorAt(i,new THREE.Color(1,1,1));
+    const pg=new THREE.PlaneGeometry(1,1);pg.rotateX(-Math.PI/2);
+    capIM=new THREE.InstancedMesh(pg,new THREE.MeshStandardMaterial({roughness:0.4,metalness:0.55,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-2}),cap);capIM.frustumCulled=false;
+    for(let i=0;i<cap;i++)capIM.setColorAt(i,new THREE.Color(1,1,1));
+    tableG.add(upIM);tableG.add(capIM);
+  }
+  const M4=new THREE.Matrix4(),rc=m.raw.map(lin),cc=m.cut.map(lin),col=new THREE.Color();
+  const {XE,YE}=WP;
+  list.forEach((c,k)=>{const i=Math.floor(c/NY),j=c%NY,x=(XE[i]+XE[i+1])/2,y=(YE[j]+YE[j+1])/2,sx=XE[i+1]-XE[i]-0.02,sz=YE[j+1]-YE[j]-0.02;   // knapp innerhalb der Zelle: kein Flimmern mit den Wänden
+    M4.makeScale(sx,u1[c]-u0[c],sz);M4.setPosition(x,u0[c],y);upIM.setMatrixAt(k,M4);
+    M4.makeScale(sx+0.02,1,sz+0.02);M4.setPosition(x,u1[c]+0.01,y);capIM.setMatrixAt(k,M4);
+    const edge=i===0||j===0||i===NX-1||j===NY-1,bc=edge?rc:cc,bs=edge?0.82:0.92;col.setRGB(bc[0]*bs,bc[1]*bs,bc[2]*bs);upIM.setColorAt(k,col);   // Stirnseiten am Blockrand roh
+    const top=WP.upTop&&WP.upTop[c]?cc:rc,sh=WP.upTop&&WP.upTop[c]?1:0.92+0.06*((i*7+j*3)%5)/5;col.setRGB(top[0]*sh,top[1]*sh,top[2]*sh);capIM.setColorAt(k,col)});
+  upIM.count=capIM.count=n;upIM.instanceMatrix.needsUpdate=true;capIM.instanceMatrix.needsUpdate=true;if(capIM.instanceColor)capIM.instanceColor.needsUpdate=true;if(upIM.instanceColor)upIM.instanceColor.needsUpdate=true;
+}
+function buildTool(){
+  cutterG.clear();toolG.children.filter(c=>c!==cutterG).forEach(c=>toolG.remove(c));
+  const t=tool(),R=t.D/2,mat=t.cm==='HSS'?M3.hss:M3.hm;
+  if(t.kind==='face'){
+    const H=t.H,{yb,bh,bodyR,shR,shL}=t.bd;
+    cyl(bodyR,bodyR,bh,M3.holder,0,yb+bh/2,0,cutterG,64);                                             // Grundkörper
+    if(H.body==='shank'){cyl(shR,shR,shL,M3.steel,0,yb+bh+shL/2,0,cutterG,24);cyl(shR+8,shR+12,50,M3.holder,0,yb+bh+shL+25,0,toolG,32)}
+    else cyl(bodyR*0.55,bodyR*0.55,8,M3.dark,0,yb+bh+4,0,cutterG,48);
+    // Wendeschneidplatten: Kontur im r-z-Schnitt, Dicke tangential, Spanfläche in Drehrichtung
+    const sh=new THREE.Shape();if(H.ri)sh.absarc(t.Rc,H.ri,H.ri,0,Math.PI*2,false);else{t.pts.forEach((p,i)=>i?sh.lineTo(p[0],p[1]):sh.moveTo(p[0],p[1]));sh.closePath()}
+    const ig=new THREE.ExtrudeGeometry(sh,{depth:H.s,bevelEnabled:false,curveSegments:24});ig.translate(0,0,-H.s);
+    const cx=H.ri?t.Rc:t.pts.reduce((s,p)=>s+p[0],0)/4,cy=H.ri?H.ri:t.pts.reduce((s,p)=>s+p[1],0)/4;
+    const sg=new THREE.CylinderGeometry(Math.min(2.2,(H.ri||H.a/2)*0.3),Math.min(2.2,(H.ri||H.a/2)*0.3),0.6,16);sg.rotateX(Math.PI/2);sg.translate(cx,cy,0.25);
+    for(let i=0;i<t.z;i++){const a=i/t.z*Math.PI*2,piv=new THREE.Group();piv.rotation.y=a;cutterG.add(piv);
+      piv.add(new THREE.Mesh(ig,M3.hm));piv.add(new THREE.Mesh(sg,M3.black));
+    }
+    if(H.body!=='shank')cyl(16,16,50,M3.holder,0,yb+bh+30,0,toolG,24);
+  }else if(t.kind==='tslot'){
+    const rn=t.dn/2;cyl(R*0.9,R*0.9,t.b,mat,0,t.b/2,0,cutterG,32);
+    for(let i=0;i<t.z;i++){const a=i/t.z*Math.PI*2,s=i%2?1:-1,tt=box(R*0.24,t.b*0.9,1.6,mat,Math.cos(a)*R*0.89,t.b/2,Math.sin(a)*R*0.89,cutterG);tt.rotation.y=-a;tt.rotation.x=s*0.35}
+    cyl(rn,rn,t.reach,M3.steel,0,t.b+t.reach/2,0,cutterG,24);                                         // Hals
+    cyl(8,8,40,M3.steel,0,t.b+t.reach+20,0,toolG,24);cyl(18,22,50,M3.holder,0,t.b+t.reach+65,0,toolG,32);
+  }else{
+    const body=cyl(R*0.82,R*0.82,t.lc,mat,0,t.lc/2,0,cutterG,32);
+    for(let i=0;i<t.z;i++){const a=i/t.z*Math.PI*2;const fl=box(R*0.3,t.lc,Math.max(0.8,R*0.12),mat,Math.cos(a)*R*0.86,t.lc/2,Math.sin(a)*R*0.86,cutterG);fl.rotation.y=-a}
+    if(t.kind==='ball'){const sp=new THREE.Mesh(new THREE.SphereGeometry(R,24,12,0,Math.PI*2,Math.PI/2,Math.PI/2),mat);sp.position.y=R;cutterG.add(sp);cutterG.children[0].position.y=t.lc/2+R*0.2}
+    cyl(Math.max(R*0.9,5),Math.max(R*0.9,5),40,M3.steel,0,t.lc+20,0,toolG,24);                     // Schaft
+    cyl(Math.max(R+6,16),Math.max(R+10,22),50,M3.holder,0,t.lc+65,0,toolG,32);                      // Spannzangenfutter
+  }
+  quill.position.set(0,0,0);
+}
+function resize(){if(!R3)return;const r=$('#mstage').getBoundingClientRect();if(!r.width)return;R3.setSize(r.width,r.height,false);camera.aspect=r.width/Math.max(1,r.height);camera.updateProjectionMatrix()}
+
+/* ---------- Abtrag ---------- */
+const FR={vol:0,bad:null,center:0};
+function stamp(x,y,z){
+  const t=tool(),R=t.D/2,Ro=t.Ro||R,{NX,NY,h,mach,u0,u1}=WP,i0=Math.max(0,Math.floor((x-Ro)/G)),i1=Math.min(NX-1,Math.ceil((x+Ro)/G)),j0=Math.max(0,Math.floor((y-Ro)/G)),j1=Math.min(NY-1,Math.ceil((y+Ro)/G));
+  const ts=t.kind==='tslot',zt=ts?z+t.b:Infinity,rn2=ts?(t.dn/2)**2:0;let vol=0;
+  for(let i=i0;i<=i1;i++){const dx=i*G-x;for(let j=j0;j<=j1;j++){const dy=j*G-y,r2=dx*dx+dy*dy;if(r2>Ro*Ro)continue;
+    let zb=z;if(t.kind==='ball')zb=z+R-Math.sqrt(Math.max(0,R*R-r2));else if(t.zoff)zb=z+t.zoff(Math.sqrt(r2));
+    const c=i*NY+j,hc=h[c],up=u1[c]>u0[c]+1e-3;let d=0;
+    if(ts){ // Hals darf kein Material berühren
+      if(r2<=rn2&&!FR.bad&&(hc>zt+0.2||(up&&u1[c]>zt+0.2&&u0[c]<zt+t.reach)))FR.bad='neck';
+    }else if(!FR.bad&&(hc>z+(t.clr??t.lc)+0.3||(up&&u1[c]>z+(t.clr??t.lc)+0.3)))FR.bad='shank';
+    // unterer Block [0, h]
+    if(hc>zb+1e-4){const nb=Math.max(0,zb);
+      if(hc<=zt){d+=hc-nb;h[c]=nb}
+      else{d+=zt-nb;if(up){u0[c]=zt;u1[c]=Math.max(u1[c],hc)}else{u0[c]=zt;u1[c]=hc;if(!WP.upTop)WP.upTop=new Uint8Array(NX*NY);WP.upTop[c]=mach[c]}h[c]=nb;WP.upDirty=true}}
+    // Überhang [u0, u1]
+    if(up&&u1[c]>zb&&u0[c]<zt){WP.upDirty=true;
+      if(zb<=u0[c]&&zt>=u1[c]){d+=u1[c]-u0[c];u0[c]=u1[c]=0}
+      else if(zb<=u0[c]){d+=zt-u0[c];u0[c]=zt}
+      else{d+=u1[c]-zb;u1[c]=zb;if(WP.upTop)WP.upTop[c]=1}}
+    if(d>1e-5){vol+=d*G*G;mach[c]=1;if(!ts&&r2<(R*0.25)**2)FR.center+=d;
+      if(i<WP.dLo[0])WP.dLo[0]=i;if(j<WP.dLo[1])WP.dLo[1]=j;if(i>WP.dHi[0])WP.dHi[0]=i;if(j>WP.dHi[1])WP.dHi[1]=j}
+  }}
+  return vol;
+}
+function halt(msg){MM.q=[];MM.jx=MM.jy=MM.jz=0;MM.job=null;MM.status='Halt';if(msg)toast(msg)}
+function step(dt){
+  // nächstes Ziel
+  let tx=MM.x,ty=MM.y,tz=MM.z;MM.rapid=false;
+  if(MM.q.length){const m=MM.q[0],sp=m.feed?vfVal()/60*F.ovr/100:RAPIDF;MM.rapid=!m.feed;
+    const dx=m.x-MM.x,dy=m.y-MM.y,dz=m.z-MM.z,d=Math.hypot(dx,dy,dz),s=sp*dt;
+    if(d<=s){tx=m.x;ty=m.y;tz=m.z;MM.q.shift();if(!MM.q.length){MM.job=null;MM.status=MM.spindle?'Spindel läuft':'Bereit'}}else{tx+=dx/d*s;ty+=dy/d*s;tz+=dz/d*s}
+    MM.status=m.feed?'Vorschub':'Eilgang';
+  }else if(MM.jx||MM.jy||MM.jz){const sp=MM.shift?RAPIDF:(MM.spindle?vfVal()/60*F.ovr/100:4);MM.rapid=MM.shift;tx+=MM.jx*sp*dt;ty+=MM.jy*sp*dt;tz+=MM.jz*sp*dt;MM.status='Handbetrieb'}
+  tz=clamp(tz,-2,F.H+200);tx=clamp(tx,-200,F.L+200);ty=clamp(ty,-150,F.B+150);
+  // in kleinen Schritten stempeln
+  const d=Math.hypot(tx-MM.x,ty-MM.y,tz-MM.z),n=Math.max(1,Math.ceil(d/(G*0.8)));let vol=0;const save=WP.h.slice?null:null;
+  for(let k=1;k<=n;k++){const px=MM.x+(tx-MM.x)*k/n,py=MM.y+(ty-MM.y)*k/n,pz=MM.z+(tz-MM.z)*k/n;
+    FR.center=0;const v=stamp(px,py,pz);
+    if(v>0.02&&!MM.spindle){halt('Spindel steht! Bei stehender Spindel darf der Fräser nicht ins Material – er würde brechen.');updateBlock(false);return 0}
+    if(FR.bad==='shank'){FR.bad=null;halt(tool().kind==='face'?'Der Grundkörper des Messerkopfs berührt das Werkstück – a_p ist größer als die Plattenschneide.':'Der Schaft berührt das Werkstück – die Schneidenlänge reicht für diese Tiefe nicht.');return 0}
+    if(FR.bad==='neck'){FR.bad=null;halt('Der Hals des T-Nutenfräsers stößt an! Zuerst mit dem Schaftfräser Ø12 die Halsnut auf volle Tiefe fräsen (Zyklus Nut, gleiche Nutlage und Tiefe).');return 0}
+    if(pz<0.5&&v>0){halt('Achtung: Der Fräser ist am Schraubstock/Parallelunterlage angekommen!');return 0}
+    if(FR.center>0.05&&tz<MM.z-1e-6&&Math.abs(tx-MM.x)+Math.abs(ty-MM.y)<1e-6&&!tool().center){halt('Dieser Fräser schneidet nicht über die Mitte – senkrecht eintauchen geht nur mit Langloch- oder VHM-Fräser. Von der Seite einfahren.');return 0}
+    vol+=v;MM.x=px;MM.y=py;MM.z=pz;
+  }
+  if(MM.rapid&&vol>Math.max(20,(CALC?CALC.ap*CALC.ae:10)*3)){halt('Eilgang ins Material! Erst positionieren, dann mit Vorschub fräsen.');}
+  return vol;
+}
+let chipAcc=0;const chips=[];
+function simulate(dtReal){
+  const dt=dtReal*F.speed;let vol=0;
+  const nsub=Math.max(1,Math.ceil(dt/0.02));for(let i=0;i<nsub;i++)vol+=step(dt/nsub);
+  if(MM.spindle)MM.rot+=nVal()/60*2*Math.PI*dt;
+  if(vol>1e-4&&dt>0&&CALC){const Q=vol/dt*60,Pc=Q*CALC.kc*CALC.K/6e7,Fc=Pc*60000/Math.max(1,CALC.vc),a=Math.min(1,dtReal/0.15);
+    LIVE.Pc+=(Pc-LIVE.Pc)*a;LIVE.Fc+=(Fc-LIVE.Fc)*a;LIVE.cut=true;LIVE.cutT=0.3;chipAcc+=vol}
+  else{LIVE.cutT-=dtReal;if(LIVE.cutT<=0){LIVE.cut=false;LIVE.Pc*=Math.max(0,1-dtReal*6);LIVE.Fc*=Math.max(0,1-dtReal*6)}}
+  let ne=0;while(chipAcc>15&&ne<5){emitChip();chipAcc-=15;ne++}if(chipAcc>150)chipAcc=150;
+}
+function emitChip(){
+  if(!$('#mckChips').checked)return;const R=tool().D/2,a=Math.random()*Math.PI*2,m=MATS[F.mat],c=MATS[F.mat].chip==='stahl'?[.74,.67,.52]:m.cut;
+  const it={p:new THREE.Vector3(Math.cos(a)*R,Math.max(0.5,F.H-(F.H-MM.z)*0.5),Math.sin(a)*R),v:new THREE.Vector3(-Math.sin(a)*240+(Math.random()-.5)*80,120+Math.random()*160,Math.cos(a)*240),r:new THREE.Euler(Math.random()*6,Math.random()*6,0),rest:false,col:c};
+  // Weltlage: Werkzeug steht bei x=0,z=0
+  it.p.y=Math.max(0.5,MM.z+1);
+  if(chips.length<300)chips.push(it);else chips[(emitChip.k=(emitChip.k||0)+1)%300]=it;
+  const i=chips.indexOf(it);chipIM.setColorAt(i,new THREE.Color().setRGB(lin(c[0]),lin(c[1]),lin(c[2])));chipIM.instanceColor.needsUpdate=true;
+}
+const _m=new THREE.Matrix4(),_q=new THREE.Quaternion(),_s=new THREE.Vector3(1.4,1.4,1.4);
+function updateChips(dt){chips.forEach((c,i)=>{if(!c.rest){c.v.y-=9810*dt*0.3;c.p.addScaledVector(c.v,dt);c.r.x+=dt*9;if(c.p.y<-30){c.p.y=-30;c.rest=true}}_q.setFromEuler(c.r);_m.compose(c.p,_q,_s);chipIM.setMatrixAt(i,_m)});chipIM.count=chips.length;chipIM.instanceMatrix.needsUpdate=true}
+
+/* ---------- Zyklen ---------- */
+function startCycle(){
+  if(!CALC)return;if(CALC.errs.length){toast(CALC.errs[0]);return}
+  const t=tool(),R=t.D/2,Ro=t.Ro||R,H=topZ(),safe=Math.max(F.H,H)+8,q=[];if(MM.z<safe)q.push({x:MM.x,y:MM.y,z:safe,feed:false});
+  if(F.op==='plan'){
+    const ae=Math.min(F.ae,t.D*0.9),ys=[];for(let y=F.B+R-ae;;y-=ae){ys.push(y);if(y-R<=0)break}
+    const passes=Math.max(1,Math.ceil(F.t/F.ap-1e-6));
+    for(let p=1;p<=passes;p++){const z=Math.max(0.5,H-Math.min(F.t,F.ap*p));let dir=F.lauf==='gleich'?1:-1;
+      ys.forEach((y,k)=>{const xa=dir>0?-Ro-5:F.L+Ro+5,xb=dir>0?F.L+Ro+5:-Ro-5;q.push({x:xa,y,z:safe,feed:false},{x:xa,y,z,feed:false},{x:xb,y,z,feed:true},{x:xb,y,z:safe,feed:false});})}
+  }else if(F.op==='schulter'){
+    const ae=Math.min(F.ae,t.D),y=-R+ae,passes=Math.max(1,Math.ceil(F.t/F.ap-1e-6)),dir=F.lauf==='gleich'?1:-1,xa=dir>0?-Ro-5:F.L+Ro+5,xb=dir>0?F.L+Ro+5:-Ro-5;
+    for(let p=1;p<=passes;p++){const z=Math.max(0.5,H-Math.min(F.t,F.ap*p));q.push({x:xa,y,z:safe,feed:false},{x:xa,y,z,feed:false},{x:xb,y,z,feed:true},{x:xb,y,z:safe,feed:false})}
+  }else if(F.op==='fase'){
+    // Kegelmantel durch die Kante: Spitze 1 mm neben der Kante, Fasentiefe a_p
+    const k=t.kr*DEG,c=F.ap,zt=H-c-Math.tan(k),yt=-(t.Rc+1),dir=F.lauf==='gleich'?1:-1,xa=dir>0?-Ro-5:F.L+Ro+5,xb=dir>0?F.L+Ro+5:-Ro-5;
+    q.push({x:xa,y:yt,z:safe,feed:false},{x:xa,y:yt,z:zt,feed:false},{x:xb,y:yt,z:zt,feed:true},{x:xb,y:yt,z:safe,feed:false});
+  }else if(F.op==='tnut'){
+    const y=clamp(F.sy,6,F.B-6),xe=Math.min(F.sl,F.L+11)-6,z=Math.max(0.5,H-F.t),xa=-R-8;
+    q.push({x:xa,y,z:safe,feed:false},{x:xa,y,z,feed:false},{x:xe,y,z,feed:true},{x:xa,y,z,feed:false},{x:xa,y,z:safe,feed:false});
+  }else{
+    const y=clamp(F.sy,R,F.B-R),xe=Math.min(F.sl,F.L+R+5)-R,passes=Math.max(1,Math.ceil(F.t/F.ap-1e-6));
+    for(let p=1;p<=passes;p++){const z=Math.max(0.5,H-Math.min(F.t,F.ap*p));q.push({x:-R-5,y,z:safe,feed:false},{x:-R-5,y,z,feed:false},{x:xe,y,z,feed:true},{x:xe,y,z:safe,feed:false})}
+  }
+  MM.q=q;MM.job=F.op;if(!MM.spindle)setSpindle(true);
+}
+function topZ(){let m=0;for(const v of WP.h)if(v>m)m=v;for(const v of WP.u1)if(v>m)m=v;return m}
+function toolTop(){const t=tool();return t.kind==='face'?t.bd.top:t.kind==='tslot'?t.b+t.reach+90:t.lc+90}
+function setSpindle(on){MM.spindle=on;$('#mbSpindle').classList.toggle('on',on);MM.status=on?'Spindel läuft':'Bereit'}
+
+/* ---------- Rechnung ---------- */
+function calc(){
+  const t=tool(),m=MATS[F.mat],n=nVal(),vf=vfVal(),fs=F.op==='fase'&&!!(t.H&&t.H.fase),D=fs?2*(t.Rc+1+F.ap/Math.tan(t.kr*DEG)/2):t.D,z=t.z,vc=Math.PI*D*n/1000,fz=vf/(z*n);
+  const tn=F.op==='tnut',ap=tn?(t.b||F.ap):F.ap,ae=tn?Math.max(0.5,(D-12)/2):fs?F.ap/Math.tan(t.kr*DEG):F.op==='nut'?D:Math.min(F.ae,D),sides=tn?2:1;
+  const phi=F.op==='nut'?180:F.op==='plan'?2*Math.asin(clamp(ae/D,0,1))/DEG:Math.acos(clamp(1-2*ae/D,-1,1))/DEG;
+  const kr=t.head==='R'?Math.max(5,Math.acos(clamp(1-ap/t.H.ri,-1,1))/DEG):t.kr;
+  const sk=Math.sin(kr*DEG),hm=360/(Math.PI*phi)*fz*(ae/D)*sk,kc=m.kc/Math.pow(Math.max(hm,0.005),m.mc);
+  const gamma=t.gamma,Kg=1-0.015*(gamma-m.g0),Kv=clamp(2.023*Math.pow(Math.max(vc,10),-0.153),0.8,1.45),Ks=CUT[F.cm].Ks,Kw=WEAR[F.wear].K,K=Kg*Kv*Ks*Kw;
+  const ze=sides*phi*z/360,b=t.head==='R'?t.H.ri*kr*DEG:ap/sk,Fcm=b*hm*kc*K,Fc=ze*Fcm,af=fs?0.5:1,Pc=sides*af*ae*ap*vf*kc*K/6e7,Pa=Pc/ETAF,Q=sides*af*ae*ap*vf/1000;
+  // Abdrängung: Fräser als Kragbalken, Radialkraft an der Schneide
+  const Ew=t.H?210000:t.cm==='HSS'?210000:600000;let Lk,dI;
+  if(t.H){if(t.H.body==='arbor'){Lk=t.bd.yb+20;dI=Math.max(40,2*t.bd.bodyR*0.7)}else{Lk=t.bd.yb+t.bd.bh+t.bd.shL*0.6;dI=2*t.bd.shR}}
+  else if(t.kind==='tslot'){Lk=t.b/2+t.reach+12;dI=t.dn}else{Lk=t.lc+12-Math.min(ap,t.lc)/2;dI=0.8*t.D}
+  const Fr=0.4*Fc*Math.max(0.5,sk),Iq=Math.PI*dI**4/64,dlt=Fr*Lk**3/(3*Ew*Iq);
+  const passes=Math.max(1,Math.ceil(F.t/F.ap-1e-6)),R=D/2;let Lw;
+  if(F.op==='plan'){let k=0;for(let y=F.B+R-Math.min(F.ae,D*0.9);;y-=Math.min(F.ae,D*0.9)){k++;if(y-R<=0)break}Lw=k*passes*(F.L+D+10)}else if(tn)Lw=Math.min(F.sl,F.L)+R+8;else if(F.op==='nut')Lw=passes*(Math.min(F.sl,F.L)+5);else Lw=passes*(F.L+D+10);
+  const rec=Math.round((m.vc[F.cm]||m.vc.HM||30)*0.85),th=Lw/vf;
+  const r={n,vf,D,z,vc,fz,ap,ae,phi,hm,kc,kr,sides,af,pre:sides>1?'2 · ':fs?'½ · ':'',Fr,Lk,dI,Ew,Iq,dlt,gamma,Kg,Kv,Ks,Kw,K,ze,b,Fcm,Fc,Pc,Pa,Q,Lw,th,rec,passes,msgs:[],errs:[]};
+  const E=(lv,tx)=>{r.msgs.push({lv,tx});if(lv==='err')r.errs.push(tx)};
+  if(Pa>PMAXF)E('err',`Antriebsleistung reicht nicht: ${fmt(Pa,1)} kW benötigt, Motor hat ${fmt(PMAXF,1)} kW. a_p, a_e oder v_f verringern.`);
+  if(F.op==='schulter'&&F.ae>D)E('err','a_e ist größer als der Fräserdurchmesser – beim Absatz höchstens a_e = D.');
+  if(t.kind==='tslot'&&!tn)E('err','Der T-Nutenfräser arbeitet nur im Zyklus T-Nut (Grund einer vorgefrästen Halsnut).');
+  if(t.H&&t.H.fase&&!fs)E('err','Der Fasenfräser fräst nur Fasen – Zyklus Fase (◺) wählen.');
+  if(F.op==='fase'&&!(t.H&&t.H.fase))E('err','Für die Fase im Wendeplatten-Konfigurator einen Fasenfräser (90° oder 60°) wählen.');
+  if(fs)E('info',`Fase ${fmt(ap,1)} × ${fmt(ae,1)} mm: wirksamer Durchmesser in Fasenmitte D = ${fmt(D,1)} mm; der Spanungsquerschnitt ist ein Dreieck → P_c und Q mit Faktor ½.`);
+  if(dlt>0.02)E('warn',`Der Fräser wird um ${fmt0(dlt*1000)} µm abgedrängt – die Wand wird schräg und das Maß weicht ab. Kürzer spannen, a_e oder f_z verkleinern oder einen dickeren Fräser nehmen.`);
+  if(tn&&t.kind!=='tslot')E('err','Für den Zyklus T-Nut den T-Nutenfräser (DIN 851) einwechseln.');
+  if(tn&&F.t<t.b+3)E('err',`T-Nut: Tiefe mindestens ${t.b+3} mm (Scheibe ${t.b} mm + Hals).`);
+  if(!tn&&ap>t.lc)E('err',t.kind==='face'?`a_p größer als die nutzbare Schneide der Platte (${t.lc} mm) – der Messerkopf würde mit dem Grundkörper anstoßen.`:`a_p größer als die Schneidenlänge (${t.lc} mm) – der Schaft würde reiben.`);
+  if(F.t>F.H-3)E('err','Frästiefe zu groß – der Fräser käme in den Schraubstock.');
+  if(t.H&&t.H.body==='arbor'&&F.op==='nut')E('warn','Mit dem Messerkopf fräst man keine Nuten – dafür Schaft- oder Langlochfräser nehmen.');
+  if(t.kind==='face'&&F.op==='schulter'&&t.kr!==90)E('warn',`Mit ${t.head==='R'?'Rundplatten':'κr = '+t.kr+'°'} entsteht keine rechtwinklige Schulter, sondern eine Schräge. Für Absätze den Eckfräskopf 90° wählen.`);
+  if(t.head==='R')E('info',`Rundplatte: bei a_p = ${fmt(ap,1)} mm ist κr = ${fmt0(kr)}° – die Späne werden dünner als f_z.`);
+  if(tn)E('info','T-Nut: die Scheibe schneidet auf beiden Seiten unter die Halsnut – eine Seite im Gleich-, die andere im Gegenlauf.');
+  if(fz<t.fz[0])E('warn',`Zahnvorschub f_z = ${fmt3(fz)} mm ist kleiner als der Richtwert (${fmt2(t.fz[0])}–${fmt2(t.fz[1])} mm): Schneide reibt, h_m sehr klein, k_c steigt.`);
+  else if(fz>t.fz[1])E('warn',`Zahnvorschub f_z = ${fmt3(fz)} mm ist größer als der Richtwert (bis ${fmt2(t.fz[1])} mm): Zahnbruch droht.`);
+  if(vc>rec*1.35)E('warn',`v_c = ${fmt0(vc)} m/min liegt deutlich über dem Richtwert (≈ ${rec} m/min).`);else if(vc<rec*0.5)E('info',`v_c = ${fmt0(vc)} m/min ist niedrig (Richtwert ≈ ${rec} m/min).`);
+  if(F.lauf==='gleich')E('info','Gleichlauf: glattere Oberfläche und weniger Verschleiß – an konventionellen Maschinen aber nur mit spielfreier Tischspindel, sonst zieht der Fräser den Tisch nach.');
+  else E('info','Gegenlauf: die Schneide beginnt bei h = 0 und gleitet erst, bevor sie schneidet – mehr Verschleiß, aber sicher auf Maschinen mit Spindelspiel.');
+  if(F.op==='nut')E('info','Nut: voller Eingriff a_e = D, eine Seite im Gleichlauf, die andere im Gegenlauf.');
+  return r;
+}
+function renderSteps(){
+  const R=CALC,m=MATS[F.mat],t=tool();if(!R)return;
+  const phiTxt=F.op==='tnut'?`je Seite a_e = (D − 12) / 2 = ${fmt(R.ae,1)} ;  cos φ_s = 1 − 2 · a_e / D`:F.op==='nut'?'a_e = D ⇒ φ_s = 180°':F.op==='plan'?`φ_s = 2 · arcsin(a_e / D) = 2 · arcsin(${fmt(R.ae,1)} / ${R.D})`:`cos φ_s = 1 − 2 · a_e / D = 1 − 2 · ${fmt(R.ae,1)} / ${R.D}`;
+  const u=x=>x.replace(/_([a-zεs.0-9]+)/g,'<sub>$1</sub>');
+  const S=[
+   ['Schnittgeschwindigkeit',`v_c = π · D · n / 1000`,`= π · ${R.D} · ${R.n} / 1000`,`v_c = <b>${fmt(R.vc,1)} m/min</b>`,`Richtwert ≈ ${R.rec} m/min (Fräsen etwa 15 % unter Drehen).`],
+   ['Zahnvorschub',`f_z = v_f / (z · n)`,`= ${fmt(R.vf,1)} / (${R.z} · ${R.n})`,`f_z = <b>${fmt3(R.fz)} mm</b>`,`An der konventionellen Fräsmaschine stellt man v_f in mm/min ein – jede Schneide nimmt davon f_z ab. Richtwert ${fmt2(t.fz[0])}–${fmt2(t.fz[1])} mm.`],
+   ['Eingriffswinkel',F.op==='plan'?'Fräsermitte über dem Werkstück':F.op==='tnut'?'T-Nut: Scheibe schneidet beidseitig unter die Halsnut':F.op==='nut'?'Nut: voller Eingriff':'Absatz: Fräser am Rand',phiTxt,`φ_s = <b>${fmt(R.phi,1)}°</b>`,'So weit dreht sich eine Schneide, während sie im Werkstoff ist.'],
+   ['Mittlere Spanungsdicke',`h_m = (360° / (π · φ_s)) · f_z · (a_e / D) · sin κr`,`= (360 / (π · ${fmt(R.phi,1)})) · ${fmt3(R.fz)} · (${fmt(R.ae,1)} / ${R.D}) · sin ${fmt0(R.kr)}°`,`h_m = <b>${fmt3(R.hm)} mm</b>`,'Der Span ist kommaförmig – beim Gegenlauf von 0 bis max, beim Gleichlauf umgekehrt. Für die Kraft rechnet man mit dem Mittelwert.'],
+   ['Spezifische Schnittkraft',`k_c = k_c1.1 / h_m^m_c`,`= ${m.kc} / ${fmt3(Math.max(R.hm,0.005))}<sup>${fmt2(m.mc)}</sup>`,`k_c = <b>${fmt0(R.kc)} N/mm²</b>`,'Wegen der dünnen Späne ist k_c beim Fräsen meist deutlich höher als beim Drehen.'],
+   ['Korrekturfaktoren',`K = K_γ · K_v · K_s · K_ver`,`= ${fmt3(R.Kg)} · ${fmt3(R.Kv)} · ${fmt2(R.Ks)} · ${fmt2(R.Kw)}`,`K = <b>${fmt3(R.K)}</b>`,''],
+   ['Schneiden im Eingriff',R.sides>1?`z_e = 2 · φ_s · z / 360°`:`z_e = φ_s · z / 360°`,`= ${R.sides>1?'2 · ':''}${fmt(R.phi,1)} · ${R.z} / 360`,`z_e = <b>${fmt2(R.ze)}</b>`,'Im Mittel so viele Zähne schneiden gleichzeitig.'],
+   ['Schnittkraft',t.head==='R'?`F_c,m = b · h_m · k_c · K  mit b = r · κr (Bogenlänge) ;  F_c = z_e · F_c,m`:`F_c,m = (a_p / sin κr) · h_m · k_c · K ;  F_c = z_e · F_c,m`,t.head==='R'?`= ${fmt(R.b,2)} · ${fmt3(R.hm)} · ${fmt0(R.kc)} · ${fmt3(R.K)}`:`= (${fmt(R.ap,1)} / ${fmt3(Math.sin(R.kr*DEG))}) · ${fmt3(R.hm)} · ${fmt0(R.kc)} · ${fmt3(R.K)}`,`F_c,m = ${fmt0(R.Fcm)} N je Schneide ;  F_c = <b>${fmt0(R.Fc)} N</b>`,`Entspricht etwa ${fmt0(R.Fc/9.81)} kg.`],
+   ['Abdrängung des Fräsers',`F_r ≈ 0,4 · F_c ;  f = F_r · L³ / (3 · E · I) ;  I = π · d⁴ / 64`,`= ${fmt0(R.Fr)} N · ${fmt(R.Lk,0)}³ mm³ / (3 · ${fmt0(R.Ew)} N/mm² · ${fmt0(R.Iq)} mm⁴)   (Auskraglänge L = ${fmt(R.Lk,0)} mm, Kern-Ø d = ${fmt(R.dI,1)} mm)`,`f = <b>${fmt(R.dlt*1000,1)} µm</b>`,'Der Fräser ist ein eingespannter Balken: die Radialkraft drückt ihn vom Material weg. f wächst mit L³ und fällt mit d⁴ – doppelt so lang auskragen gibt 8-fache Abdrängung, ein 20 % dickerer Fräser halbiert sie fast. Folge: schräge Wände, Maß zu groß/zu klein, Rattern.'],
+   ['Leistung',`P_c = ${R.pre}a_e · a_p · v_f · k_c · K / (60 · 10⁶) ;  P_a = P_c / η`,`= ${R.pre}${fmt(R.ae,1)} · ${fmt(R.ap,1)} · ${fmt(R.vf,1)} · ${fmt0(R.kc)} · ${fmt3(R.K)} / 6·10⁷`,`P_c = <b>${fmt2(R.Pc)} kW</b> ;  P_a = <b>${fmt2(R.Pa)} kW</b>`,'Zur Probe: F_c · v_c / 60 000 ergibt denselben Wert.'],
+   ['Spanvolumen und Hauptzeit',`Q = ${R.pre}a_e · a_p · v_f / 1000 ;  t_h = L / v_f`,`L = ${fmt0(R.Lw)} mm (alle Bahnen mit An- und Überlauf)`,`Q = <b>${fmt(R.Q,1)} cm³/min</b> ;  t_h = <b>${fmt2(R.th)} min</b>`,'']];
+  $('#mSteps').innerHTML=S.map((x,i)=>`<li class="step${i===7?' key':''}"><div class="t">${x[0]}</div><div class="f">${u(x[1])}</div><div class="s">${u(x[2])}</div><div class="r">${u(x[3])}</div>${x[4]?`<p>${u(x[4])}</p>`:''}</li>`).join('');
+  $('#mbigFc').textContent=fmt0(R.Fc)+' N';$('#mbigPc').textContent=fmt2(R.Pc)+' kW';$('#mbigQ').textContent=fmt(R.Q,1)+' cm³/min';
+  const pr=R.Pa/PMAXF;$('#mpbar').style.width=Math.min(100,pr*100)+'%';$('#mpbar').classList.toggle('over',pr>1);
+  $('#mpNote').innerHTML=`Antriebsleistung ${sym('P','a')} = ${fmt2(R.Pa)} kW von ${fmt(PMAXF,1)} kW (${fmt0(pr*100)} %).`;
+  $('#mMsgs').innerHTML=R.msgs.map(q=>`<li class="${q.lv}">${u(q.tx)}</li>`).join('');
+  $('#mVcNote').innerHTML=`Ø ${t.D} mm → ${sym('v','c')} = ${fmt(R.vc,1)} m/min · ${sym('f','z')} = ${fmt3(R.fz)} mm (z = ${t.z})`;
+  drawEng();drawBend();
+}
+function drawBend(){
+  const c=$('#mcvBend');if(!c||$('#mtab-force').hidden)return;const {x,w,h}=prep(c),C=colors(),R=CALC,t=tool();
+  // Seitenansicht: Werkzeug hängt aus der Spindel, Werkstück rechts; Biegelinie überhöht
+  const top=24,bot=h-30,Lk=R.Lk,sc=(bot-top)/Math.max(Lk*1.25,20),cx=w*0.38,dpx=Math.min(46,Math.max(4,R.dlt*1000*0.9)),ex=dpx/Math.max(1e-9,R.dlt*sc);
+  const dW=Math.min(80,Math.max(12,R.dI*sc));
+  x.fillStyle='#58616b';x.fillRect(cx-dW/2-14,top-14,dW+28,16);
+  const y0=top+2,y1=y0+Lk*sc;
+  // unverformt gestrichelt
+  x.setLineDash([4,4]);x.strokeStyle=C.muted;x.strokeRect(cx-dW/2,y0,dW,y1-y0);x.setLineDash([]);
+  // gebogen: v(s) = f · s²(3L − s)/(2L³)
+  const N=24,P=s=>dpx*s*s*(3-s)/2;x.fillStyle=t.cm==='HSS'?'rgba(169,176,183,.85)':'rgba(201,164,64,.85)';x.strokeStyle=C.ink;x.lineWidth=1.2;
+  x.beginPath();for(let i=0;i<=N;i++){const s=i/N;x.lineTo(cx-dW/2-P(s),y0+(y1-y0)*s)}for(let i=N;i>=0;i--){const s=i/N;x.lineTo(cx+dW/2-P(s),y0+(y1-y0)*s)}x.closePath();x.fill();x.stroke();
+  // Werkstück + Kraft
+  const wx=cx+dW/2+6;x.fillStyle=C.bg2;x.fillRect(wx,y1-Math.min(R.ap*sc,y1-y0)-4,w-wx-10,h-(y1-Math.min(R.ap*sc,y1-y0)-4));x.strokeStyle=C.line;x.strokeRect(wx,y1-Math.min(R.ap*sc,y1-y0)-4,w-wx-10,h);
+  x.strokeStyle=C.fc;x.fillStyle=C.fc;x.lineWidth=2.4;const ay=y1-Math.min(R.ap*sc,y1-y0)/2-2;x.beginPath();x.moveTo(wx+50,ay);x.lineTo(cx+dW/2-dpx+4,ay);x.stroke();arrowHead(x,cx+dW/2-dpx+4,ay,Math.PI,9);
+  x.font='600 12px '+cssVar('--f-mono');x.textAlign='left';x.fillText('Fr ≈ '+fmt0(R.Fr)+' N',wx+54,ay+4);
+  // Maß f
+  x.strokeStyle=C.ink;x.lineWidth=1;x.beginPath();x.moveTo(cx-dW/2,y1+6);x.lineTo(cx-dW/2,y1+16);x.moveTo(cx-dW/2-dpx,y1+6);x.lineTo(cx-dW/2-dpx,y1+16);x.stroke();
+  x.fillStyle=C.ink;x.textAlign='right';x.fillText('f = '+fmt(R.dlt*1000,1)+' µm',cx-dW/2-dpx-4,y1+16);
+  dimV(x,C,y0,y1,cx-dW/2-dpx-16,'L '+fmt0(Lk),C.ink,-1);
+  x.fillStyle=C.muted;x.font='11px '+cssVar('--f-body');x.textAlign='left';x.fillText('Abdrängung, seitlich · Biegung '+(ex>=1?fmt0(ex)+'-fach überhöht':'maßstäblich'),8,12);
+}
+function drawEng(){
+  const c=$('#mcvEng');if(!c||$('#mtab-force').hidden)return;const {x,w,h}=prep(c),C=colors(),R=CALC,t=tool();
+  // Draufsicht, Bediener unten: Bildschirm-y nach unten = Werkstück +Y. Spindel rechtsdrehend (M3) = im Uhrzeigersinn.
+  const d=F.op==='plan'?1:(F.lauf==='gleich'?1:-1);   // Vorschubrichtung des Fräsers in X
+  const cx=w*0.46,cy=h*0.47,rr=Math.min(w*0.24,h*0.32),k=rr/(t.D/2),ae=R.ae*k;
+  const mat=new Path2D();
+  const op=F.op==='tnut'?'nut':F.op==='fase'?'schulter':F.op;
+  if(op==='schulter'){const y0=cy+rr-ae;if(d>0){mat.rect(cx,y0,w-cx,h-y0)}else{mat.rect(0,y0,cx,h-y0)}mat.rect(0,cy+rr,w,h-cy-rr)}
+  else if(op==='nut'){if(d>0)mat.rect(cx,cy-rr,w-cx,2*rr);else mat.rect(0,cy-rr,cx,2*rr);mat.rect(0,0,w,cy-rr);mat.rect(0,cy+rr,w,h-cy-rr)}
+  else{mat.rect(cx,cy-ae/2,w-cx,ae)}
+  x.save();x.fillStyle=C.bg2;x.fill(mat);x.clip(mat);x.strokeStyle=C.line;x.lineWidth=1;for(let i=-h;i<w;i+=9){x.beginPath();x.moveTo(i,h);x.lineTo(i+h,0);x.stroke()}x.restore();
+  x.fillStyle=C.muted;x.font='11px '+cssVar('--f-body');x.textAlign='right';x.fillText('Werkstück',w-8,F.op==='plan'?cy-ae/2-6:h-8);
+  // Fräser
+  x.save();x.globalAlpha=0.14;x.fillStyle=C.acc;x.beginPath();x.arc(cx,cy,rr,0,7);x.fill();x.restore();
+  x.strokeStyle=C.ink;x.lineWidth=1.4;x.beginPath();x.arc(cx,cy,rr,0,7);x.stroke();
+  // Eingriffsbogen
+  let a0,a1;
+  if(F.op==='nut'){a0=d>0?-Math.PI/2:Math.PI/2;a1=a0+Math.PI}
+  else if(F.op==='plan'){const p=Math.asin(clamp(R.ae/t.D,0,1));a0=-p;a1=p}
+  else{const ta=Math.asin(clamp(1-2*R.ae/t.D,-1,1));if(d>0){a0=ta;a1=Math.PI/2}else{a0=Math.PI/2;a1=Math.PI-ta}}
+  // Span (Komma): h = f_z · cos φ (Anteil des Vorschubs in Radialrichtung), überhöht
+  const hs=Math.min(rr*0.28,Math.max(6,R.fz*k*40));
+  x.beginPath();for(let i=0;i<=40;i++){const a=a0+(a1-a0)*i/40;x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr)}
+  for(let i=40;i>=0;i--){const a=a0+(a1-a0)*i/40,th=hs*Math.max(0,d*Math.cos(a));x.lineTo(cx+Math.cos(a)*(rr+th),cy+Math.sin(a)*(rr+th))}
+  x.closePath();x.fillStyle=C.chipS;x.fill();x.strokeStyle=C.chip;x.lineWidth=1.2;x.stroke();
+  x.strokeStyle=C.fc;x.lineWidth=3;x.beginPath();x.arc(cx,cy,rr,a0,a1);x.stroke();
+  x.lineWidth=1;x.setLineDash([3,3]);x.beginPath();x.moveTo(cx,cy);x.lineTo(cx+Math.cos(a0)*rr,cy+Math.sin(a0)*rr);x.moveTo(cx,cy);x.lineTo(cx+Math.cos(a1)*rr,cy+Math.sin(a1)*rr);x.stroke();x.setLineDash([]);
+  x.beginPath();x.arc(cx,cy,rr*0.32,a0,a1);x.stroke();
+  const am=(a0+a1)/2;x.fillStyle=C.fc;x.font='600 12px '+cssVar('--f-mono');x.textAlign='center';x.fillText('φs '+fmt0(R.phi)+'°',cx+Math.cos(am)*rr*0.55,cy+Math.sin(am)*rr*0.55+4);
+  // Schneiden
+  x.strokeStyle=C.muted;for(let i=0;i<t.z;i++){const a=i/t.z*Math.PI*2+0.4;x.beginPath();x.moveTo(cx+Math.cos(a)*rr*0.8,cy+Math.sin(a)*rr*0.8);x.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr);x.stroke()}
+  // Drehrichtung (im Uhrzeigersinn) oben links am Fräser
+  x.strokeStyle=C.acc;x.fillStyle=C.acc;x.lineWidth=2;const ra=rr+14;x.beginPath();x.arc(cx,cy,ra,-2.6,-1.6);x.stroke();arrowHead(x,cx+Math.cos(-1.6)*ra,cy+Math.sin(-1.6)*ra,-1.6+Math.PI/2,8);
+  x.font='600 11px '+cssVar('--f-mono');x.textAlign='right';x.fillText('n (M3)',cx+Math.cos(-2.6)*ra-4,cy+Math.sin(-2.6)*ra);
+  // Vorschub
+  x.strokeStyle=C.ink;x.fillStyle=C.ink;x.lineWidth=1.8;const fy=22,fx=w-70;x.beginPath();x.moveTo(fx-d*28,fy);x.lineTo(fx+d*28,fy);x.stroke();arrowHead(x,fx+d*28,fy,d>0?0:Math.PI,8);
+  x.font='600 12px '+cssVar('--f-mono');x.textAlign='center';x.fillText('v_f',fx,fy-7);
+  // a_e
+  if(op==='schulter'){const xa=d>0?cx+rr+18:cx-rr-18;dimV(x,C,cy+rr-ae,cy+rr,xa,'a_e '+fmt(R.ae,1),C.ink,d>0?1:-1)}
+  else if(F.op==='plan')dimV(x,C,cy-ae/2,cy+ae/2,cx-rr-hs-14,'a_e '+fmt(R.ae,1),C.ink,-1);
+  else dimV(x,C,cy-rr,cy+rr,cx-rr-hs-14,'a_e = D',C.ink,-1);
+  x.fillStyle=C.ink;x.font='600 12px '+cssVar('--f-body');x.textAlign='left';
+  const lauf=F.op==='nut'?'Nut: eine Seite Gleich-, eine Gegenlauf':F.op==='plan'?'Planfräsen, Mitte über dem Werkstück':(F.lauf==='gleich'?'Gleichlauf – Span dick → dünn':'Gegenlauf – Span dünn → dick');
+  x.fillText(lauf,8,16);x.fillStyle=C.muted;x.font='11px '+cssVar('--f-body');x.fillText('Draufsicht · Bediener unten',8,30);
+}
+
+/* ---------- Panel ---------- */
+const NUM=[];
+function bindNum(rid,vid,cfg){
+  const r=$('#'+rid),sp=$('#'+vid),inp=document.createElement('input');inp.type='text';inp.inputMode='decimal';inp.className='val vin';inp.id=vid;inp.autocomplete='off';
+  inp.dataset.tip=`${cfg.n} eintippen (Enter). Regler = üblicher Bereich, hier geht ${cfg.min} … ${typeof cfg.max==='function'?'':cfg.max} ${cfg.u}.`;sp.replaceWith(inp);
+  r.addEventListener('input',()=>{cfg.slide(+r.value);sync();recalc()});
+  const commit=()=>{const m=String(inp.value).replace(/\s/g,'').replace(',','.').match(/^[+-]?\d*\.?\d+/),v=m?parseFloat(m[0]):NaN,mx=typeof cfg.max==='function'?cfg.max():cfg.max;let err=null;
+    if(!Number.isFinite(v))err='keine gültige Zahl';else if(v<cfg.min||v>mx)err=`nur ${fmt(cfg.min,Number.isInteger(cfg.min)?0:2)} … ${fmt(mx,Number.isInteger(mx)?0:1)} ${cfg.u} möglich`+(cfg.why?' – '+cfg.why:'');
+    if(err){inp.classList.add('bad');toast(`${cfg.n}: ${err}.`);setTimeout(()=>inp.classList.remove('bad'),1600);inp.blur();sync();return}
+    cfg.set(v);inp.blur();sync();recalc()};
+  inp.addEventListener('change',commit);inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();commit()}});inp.addEventListener('focus',()=>setTimeout(()=>inp.select(),0));
+  NUM.push({r,inp,cfg});
+}
+function sync(){
+  for(const {r,inp,cfg} of NUM){r.value=cfg.rv();if(document.activeElement!==inp)inp.value=cfg.txt()}
+  $$('#mMatTiles .tile').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mat===F.mat));
+  $$('#mToolList .tcard').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mtool===F.tool));
+  $$('#mOpChips .chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mop===F.op));$$('#mLaufChips .chip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lauf===F.lauf));
+  {const on=F.tool==='mk',h=F.head;['#mHeadT','#mHeadD','#mHeadZ'].forEach(s=>$(s).disabled=!on);$('#mHeadCfg').style.opacity=on?1:0.55;
+   const H=HEADS[h.typ],[z0,z1]=zRange(H,h.D);$('#mHeadT').value=h.typ;$('#mHeadD').innerHTML=dsOf(H).map(d=>`<option value="${d}">${d} mm</option>`).join('');$('#mHeadD').value=h.D;
+   $('#mHeadZ').innerHTML=Array.from({length:z1-z0+1},(_,i)=>`<option value="${i+z0}">${i+z0}</option>`).join('');$('#mHeadZ').value=h.z}
+  const sc=$('#mCm'),t=tool();sc.innerHTML=(t.cm==='HSS'?['HSS']:['HM','Cermet']).map(k=>`<option value="${k}">${CUT[k].name}</option>`).join('');sc.value=F.cm;$('#mWear').value=F.wear;
+  const m=MATS[F.mat];$('#mMatCard').innerHTML=`<span><b>${m.iso}</b>${m.name}</span><span><b>k<sub>c1.1</sub></b>${m.kc} N/mm²</span><span><b>m<sub>c</sub></b>${fmt2(m.mc)}</span><span><b>R<sub>m</sub></b>${m.Rm}</span><span><b>v<sub>c</sub></b>${Math.round((m.vc.HSS||0)*0.85)} / ${Math.round((m.vc.HM||0)*0.85)} m/min</span>`;
+}
+function recalc(){CALC=calc();renderSteps();renderToolInfo();drawStock();drawTool()}
+function renderAll(){sync();recalc()}
+function renderToolInfo(){
+  const t=tool(),R=CALC;$('#mToolInfo').innerHTML=`<details class="tinfo"${F.tiOpen?' open':''}><summary><span class="ti-h"><h3 style="color:var(--ink);font-size:16px;margin:0">${t.name}</h3><div class="note" style="font-family:var(--f-mono)">${t.code}</div></span><span class="ti-kv">Ø${t.D} · z ${t.z} · κr ${t.head==='R'?fmt0(R?R.kr:0)+'° (a_p)':t.kr+'°'}</span><span class="ti-chev">▾</span></summary><div class="ti-body"><p style="font-size:14px;margin:8px 0">${t.use.replace(/_([a-z])/g,'<sub>$1</sub>')}</p><table class="tbl"><tr><td>Durchmesser D</td><td class="num">${t.D} mm</td></tr><tr><td>Zähnezahl z</td><td class="num">${t.z}</td></tr><tr><td>Einstellwinkel κr</td><td class="num">${t.head==='R'?'abhängig von a<sub>p</sub>':t.kr+'°'}</td></tr>${t.H?`<tr><td>Wendeschneidplatte</td><td class="num">${t.H.ins}</td></tr><tr><td>Schneidenkreis D<sub>c</sub> / außen</td><td class="num">${t.D} / ${fmt(2*t.Ro,1)} mm</td></tr>`:''}${t.kind==='tslot'?`<tr><td>Scheibenbreite b / Hals-Ø</td><td class="num">${t.b} / ${t.dn} mm</td></tr>`:''}<tr><td>Spanwinkel γ</td><td class="num">${t.gamma}°</td></tr><tr><td>Drallwinkel</td><td class="num">${t.helix}°</td></tr><tr><td>${t.H?'nutzbare Schneide (a<sub>p,max</sub>)':'Schneidenlänge'}</td><td class="num">${t.lc} mm</td></tr><tr><td>über Mitte schneidend</td><td class="num">${t.center?'ja':'nein'}</td></tr><tr><td>Richtwert f<sub>z</sub></td><td class="num">${fmt2(t.fz[0])}–${fmt2(t.fz[1])} mm</td></tr></table></div></details>`;
+  $('#mToolInfo details').addEventListener('toggle',e=>F.tiOpen=e.target.open);
+}
+function drawStock(){
+  const c=$('#mcvStock');if(!c||$('#mtab-stock').hidden)return;const {x,w,h}=prep(c),C=colors(),m=MATS[F.mat];
+  const fill=`rgb(${m.raw.map(v=>Math.round(v*255)).join(',')})`;
+  // Vorderansicht (X-Z) links, Draufsicht (X-Y) rechts
+  const half=w*0.55,sc=Math.min((half-60)/F.L,(h-70)/(F.H+20),(w-half-40)/F.L,(h-60)/F.B);
+  const x0=30,yb=h-30;
+  x.fillStyle=C.muted;x.fillRect(x0-10,yb,F.L*sc+20,12);x.fillStyle=C.bg2;x.fillRect(x0-10,yb-Math.min(F.H*0.5,28)*sc,8,Math.min(F.H*0.5,28)*sc);x.fillRect(x0+F.L*sc+2,yb-Math.min(F.H*0.5,28)*sc,8,Math.min(F.H*0.5,28)*sc);
+  x.fillStyle=fill;x.strokeStyle=C.ink;x.lineWidth=1.2;x.fillRect(x0,yb-F.H*sc,F.L*sc,F.H*sc);x.strokeRect(x0,yb-F.H*sc,F.L*sc,F.H*sc);
+  dimH(x,C,x0,x0+F.L*sc,yb-F.H*sc-10,'L '+F.L,C.ink);dimV(x,C,yb-F.H*sc,yb,x0+F.L*sc+20,'H '+F.H,C.ink,1);
+  const x1=half+10,y1=30;x.fillStyle=fill;x.fillRect(x1,y1,F.L*sc,F.B*sc);x.strokeRect(x1,y1,F.L*sc,F.B*sc);
+  x.fillStyle=C.muted;x.fillRect(x1+F.L*sc/2-40,y1-10,80,8);x.fillRect(x1+F.L*sc/2-40,y1+F.B*sc+2,80,8);
+  dimV(x,C,y1,y1+F.B*sc,x1+F.L*sc+12,'B '+F.B,C.ink,1);
+  x.fillStyle=C.muted;x.font='11px '+cssVar('--f-body');x.textAlign='left';x.fillText('Vorderansicht',8,14);x.fillText('Draufsicht',x1,14);
+}
+function toolIcon(x,t){
+  const col=t.cm==='HSS'?'#9aa3ab':'#c9a440';x.strokeStyle='#3a4046';x.lineWidth=1;
+  if(t.kind==='face'){const b=t.bd,s=Math.min(88/(2*t.Ro),56/(b.yb+b.bh+b.shL*0.5)),yb=70;x.fillStyle='#6b737b';x.fillRect(52-b.bodyR*s,yb-(b.yb+b.bh)*s,2*b.bodyR*s,b.bh*s);x.fillStyle='#8d959d';x.fillRect(52-b.shR*s,yb-(b.yb+b.bh+b.shL*0.5)*s,2*b.shR*s,b.shL*0.5*s);
+    x.fillStyle='#c9a440';for(const m of[-1,1]){x.beginPath();if(t.H.ri)x.arc(52+m*t.Rc*s,yb-t.H.ri*s,t.H.ri*s,0,7);else t.pts.forEach((p,i)=>{const X=52+m*p[0]*s,Y=yb-p[1]*s;i?x.lineTo(X,Y):x.moveTo(X,Y)});x.closePath();x.fill();x.stroke()}return}
+  if(t.kind==='tslot'){const s=Math.min(70/t.D,52/(t.b+t.reach)),yb=70;x.fillStyle='#8d959d';x.fillRect(52-t.dn/2*s,yb-(t.b+t.reach)*s,t.dn*s,t.reach*s);x.fillRect(52-8,yb-(t.b+t.reach)*s-10,16,10);
+    x.fillStyle=col;x.fillRect(52-t.D/2*s,yb-t.b*s,t.D*s,t.b*s);x.strokeRect(52-t.D/2*s,yb-t.b*s,t.D*s,t.b*s);return}
+  const s=Math.min(70/t.D,50/(t.lc+12)),R=t.D/2*s;x.fillStyle=col;x.fillRect(52-R,70-t.lc*s,2*R,t.lc*s-(t.kind==='ball'?R:0));
+  if(t.kind==='ball'){x.beginPath();x.arc(52,70-R,R,0,Math.PI);x.fill()}x.strokeRect(52-R,70-t.lc*s,2*R,t.lc*s);
+  x.fillStyle='#6b737b';x.fillRect(52-Math.min(R,10),70-t.lc*s-12,2*Math.min(R,10),12);
+}
+function drawTool(){
+  const c=$('#mcvTool');if(!c||$('#mtab-tool').hidden)return;const {x,w,h}=prep(c),C=colors(),t=tool();
+  const col=t.cm==='HSS'?'#a9b0b7':'#c9a440',gold='#c9a440',body='#58616b';x.lineWidth=1.2;x.strokeStyle=C.ink;
+  // ---- Seitenansicht ----
+  const cx=w*0.27,yb=h-26;
+  if(t.kind==='face'){
+    const H=t.H,{bh,shR,shL}=t.bd,y0=t.bd.yb,sl=Math.min(shL,Math.max(26,bh)),sc=Math.min((w*0.5-50)/(2*t.Ro),(h-60)/(y0+bh+sl),(cx-14)/t.Ro),bR=t.bd.bodyR*sc;
+    x.fillStyle=body;x.fillRect(cx-bR,yb-(y0+bh)*sc,2*bR,bh*sc);x.fillStyle=H.body==='shank'?'#8d959d':body;x.fillRect(cx-shR*sc,yb-(y0+bh+sl)*sc,2*shR*sc,sl*sc);
+    x.fillStyle=gold;for(const m of[-1,1]){x.beginPath();if(H.ri)x.arc(cx+m*t.Rc*sc,yb-H.ri*sc,H.ri*sc,0,7);else t.pts.forEach((p,i)=>{const X=cx+m*p[0]*sc,Y=yb-p[1]*sc;i?x.lineTo(X,Y):x.moveTo(X,Y)});x.closePath();x.fill();x.stroke()}
+    // κr am rechten Eck
+    const ex=cx+t.Rc*sc;x.strokeStyle=C.fc;x.fillStyle=C.fc;x.lineWidth=1.4;
+    if(!H.ri){x.setLineDash([3,3]);x.beginPath();x.moveTo(ex-4,yb);x.lineTo(ex+34,yb);x.stroke();x.setLineDash([]);x.beginPath();x.arc(ex,yb,24,-H.kr*DEG,0);x.stroke();
+      x.font='600 12px '+cssVar('--f-mono');x.textAlign='left';x.fillText('κr '+H.kr+'°',ex+30,yb-6)}
+    else{x.font='600 12px '+cssVar('--f-mono');x.textAlign='left';x.fillText('r = '+H.ri,ex+H.ri*sc+4,yb-H.ri*sc)}
+    dimH(x,C,cx-t.Rc*sc,cx+t.Rc*sc,yb+14,'Dc '+t.D,C.ink);x.fillStyle=C.ink;x.font='600 12px '+cssVar('--f-mono');x.textAlign='left';x.fillText('ap,max '+t.lc+' mm',8,32);
+  }else if(t.kind==='tslot'){
+    const sc=Math.min((w*0.5-60)/t.D,(h-50)/(t.b+t.reach+30)),R=t.D/2*sc;
+    x.fillStyle='#8d959d';x.fillRect(cx-8*sc,yb-(t.b+t.reach+30)*sc,16*sc,30*sc);x.fillRect(cx-t.dn/2*sc,yb-(t.b+t.reach)*sc,t.dn*sc,t.reach*sc);x.strokeRect(cx-t.dn/2*sc,yb-(t.b+t.reach)*sc,t.dn*sc,t.reach*sc);
+    x.fillStyle=col;x.fillRect(cx-R,yb-t.b*sc,2*R,t.b*sc);x.strokeRect(cx-R,yb-t.b*sc,2*R,t.b*sc);
+    x.strokeStyle=C.muted;for(let i=-4;i<=4;i++){const s=i%2?1:-1;x.beginPath();x.moveTo(cx+i*R/4.5-s*t.b*sc*0.25,yb-t.b*sc);x.lineTo(cx+i*R/4.5+s*t.b*sc*0.25,yb);x.stroke()}
+    dimH(x,C,cx-R,cx+R,yb+14,'D '+t.D,C.ink);dimV(x,C,yb-t.b*sc,yb,cx-R-12,'b '+t.b,C.ink,-1);dimH(x,C,cx-t.dn/2*sc,cx+t.dn/2*sc,yb-(t.b+t.reach*0.5)*sc,'Hals '+t.dn,C.ink);
+  }else{
+    const sc=Math.min((w*0.5-60)/t.D,(h-50)/(t.lc+40)),R=t.D/2*sc,lc=t.lc*sc;x.fillStyle=col;
+    x.fillRect(cx-R,yb-lc,2*R,lc);x.strokeRect(cx-R,yb-lc,2*R,lc);x.strokeStyle=C.muted;for(let i=-3;i<=3;i++){x.beginPath();x.moveTo(cx+i*R/3-lc*Math.tan(t.helix*DEG)/2,yb-lc);x.lineTo(cx+i*R/3+lc*Math.tan(t.helix*DEG)/2,yb);x.stroke()}
+    x.fillStyle='#8d959d';const sr=Math.max(R*0.9,5*sc);x.fillRect(cx-sr,yb-lc-40*sc,2*sr,40*sc);if(t.kind==='ball'){x.fillStyle=C.bg;x.fillRect(cx-R-1,yb-R,2*R+2,R+2);x.fillStyle=col;x.strokeStyle=C.ink;x.beginPath();x.arc(cx,yb-R,R,0,Math.PI);x.fill();x.stroke()}
+    dimH(x,C,cx-R,cx+R,yb+14,'D '+t.D,C.ink);dimV(x,C,yb-lc,yb,cx-R-14,'l '+t.lc,C.ink,-1);
+  }
+  // ---- von unten (Drehrichtung M3 erscheint von unten gegen den Uhrzeigersinn) ----
+  const ux=w*0.75,uy=h*0.5+4,ur=Math.min(w*0.2,h*0.38),Rmax=t.Ro||t.D/2,k=ur/Rmax;
+  x.lineWidth=1;x.strokeStyle=C.ink;
+  if(t.kind==='face'){
+    const H=t.H,bR=t.bd.bodyR*k,s=H.s*k,r0=Math.max(0,t.rIn)*k,r1=t.Ro*k;
+    x.fillStyle=body;x.beginPath();x.arc(ux,uy,bR,0,7);x.fill();
+    x.fillStyle='#3d444b';x.beginPath();x.arc(ux,uy,bR*0.3,0,7);x.fill();
+    x.setLineDash([3,3]);x.strokeStyle=C.muted;x.beginPath();x.arc(ux,uy,t.Rc*k,0,7);x.stroke();x.setLineDash([]);
+    for(let i=0;i<t.z;i++){const a=-Math.PI/2+i/t.z*Math.PI*2;x.save();x.translate(ux,uy);x.rotate(a);
+      x.fillStyle='#202428';x.beginPath();x.moveTo(r0-2,0);x.lineTo(r1+1,0);x.lineTo(r1+1,-s*2.6);x.lineTo(r0-2,-s*1.6);x.closePath();x.fill();   // Spanraum vor der Platte
+      x.fillStyle=gold;x.fillRect(r0,0,r1-r0,s);x.strokeStyle=C.ink;x.strokeRect(r0,0,r1-r0,s);
+      x.strokeStyle=C.fc;x.lineWidth=2;x.beginPath();x.moveTo(H.ri?t.Rc*k:r0+(r1-r0)*0.15,0);x.lineTo(r1,0);x.stroke();x.lineWidth=1;x.restore()}
+    x.fillStyle=C.ink;x.font='600 12px '+cssVar('--f-mono');x.textAlign='center';x.fillText(`z = ${t.z} · ${H.ins}`,ux,uy+ur+16);
+  }else{
+    const R=t.D/2*k,ts=t.kind==='tslot';
+    x.fillStyle=t.cm==='HSS'?'rgba(169,176,183,.85)':'rgba(201,164,64,.85)';x.beginPath();x.arc(ux,uy,R,0,7);x.fill();x.stroke();
+    const cc=!!t.center,ball=t.kind==='ball';
+    if(!cc&&!ts){x.fillStyle='#3d444b';x.beginPath();x.arc(ux,uy,R*0.14,0,7);x.fill()}
+    for(let i=0;i<t.z;i++){const a=-Math.PI/2+i/t.z*Math.PI*2,rIn=ts?R*0.72:cc&&(i<2||t.z<=2)?0:R*0.3;
+      // Spannut vor der Schneide (dunkel), Schneide als rote Linie
+      x.fillStyle='#202428';x.beginPath();for(let q=0;q<=12;q++){const r=rIn+(R-rIn)*q/12,an=a-(ball?0.5*q/12:0);x.lineTo(ux+Math.cos(an)*r,uy+Math.sin(an)*r)}
+      for(let q=12;q>=0;q--){const r=Math.max(rIn,R*0.35)+(R-Math.max(rIn,R*0.35))*q/12,an=a-(ball?0.5*q/12:0)-0.45*(0.3+0.7*q/12);x.lineTo(ux+Math.cos(an)*r,uy+Math.sin(an)*r)}x.closePath();x.fill();
+      x.strokeStyle=C.fc;x.lineWidth=2;x.beginPath();for(let q=0;q<=12;q++){const r=rIn+(R-rIn)*q/12,an=a-(ball?0.5*q/12:0)+(cc&&!ball&&rIn===0?0.05:0);x.lineTo(ux+Math.cos(an)*r+(rIn===0&&!ball?Math.sin(a)*1.5:0),uy+Math.sin(an)*r-(rIn===0&&!ball?Math.cos(a)*1.5:0))}x.stroke();x.lineWidth=1;
+      if(ts){const s=i%2?1:-1;x.fillStyle=C.ink;x.beginPath();x.arc(ux+Math.cos(a)*R*0.86,uy+Math.sin(a)*R*0.86,2.2,0,7);x.fill();x.font='9px '+cssVar('--f-mono');x.textAlign='center';x.fillText(s>0?'↑':'↓',ux+Math.cos(a)*(R+9),uy+Math.sin(a)*(R+9)+3)}}
+    if(ts){x.setLineDash([3,3]);x.strokeStyle=C.muted;x.beginPath();x.arc(ux,uy,t.dn/2*k,0,7);x.stroke();x.setLineDash([])}
+    x.fillStyle=C.ink;x.font='600 12px '+cssVar('--f-mono');x.textAlign='center';x.fillText(`z = ${t.z}`+(ts?' · kreuzverzahnt':cc?' · über Mitte schneidend':' · nicht über Mitte'),ux,uy+ur+16);
+  }
+  // Drehrichtung
+  x.strokeStyle=C.acc;x.fillStyle=C.acc;x.lineWidth=2;const ra=ur+8;x.beginPath();x.arc(ux,uy,ra,-0.5,-1.4,true);x.stroke();arrowHead(x,ux+Math.cos(-1.4)*ra,uy+Math.sin(-1.4)*ra,-1.4-Math.PI/2,7);
+  x.fillStyle=C.muted;x.font='11px '+cssVar('--f-body');x.textAlign='left';x.fillText('Seitenansicht',8,14);x.fillText('von unten · Drehrichtung M3',ux-ur-8,14);
+}
+
+/* ---------- Bedienung ---------- */
+function wire(){
+  $$('#mpanel .tab').forEach(b=>b.onclick=()=>{$$('#mpanel .tab').forEach(x=>x.setAttribute('aria-selected',x===b));$$('#mpanel .page').forEach(p=>p.hidden=p.id!=='mtab-'+b.dataset.mtab);requestAnimationFrame(recalc)});
+  $('#mMatTiles').innerHTML=Object.entries(MATS).map(([k,m])=>{const GC={P:'#2f6fd0',M:'#e0b400',K:'#d0382a',N:'#2a9452'};return `<button class="tile mat" data-mat="${k}" style="--g:${GC[m.iso]}" data-tip="${m.txt}" aria-label="${m.name}"><i style="background:rgb(${m.cut.map(v=>Math.round(v*255)).join(',')})"></i><span>${m.name.replace('EN AW-','AW-').replace('EN-GJL-','GJL-')}</span></button>`}).join('');
+  $$('#mMatTiles .tile').forEach(b=>b.onclick=()=>{F.mat=b.dataset.mat;sync();recalc()});
+  $('#mToolList').innerHTML=MT.map(t=>`<button class="tcard" data-mtool="${t.id}" data-tip="${t.name} · ${t.code}" aria-label="${t.name}"><canvas width="104" height="80"></canvas><span><b>${t.name.replace('fräser','').replace('-',' ')}</b><small>${t.id==='mk'?'Platten wählbar':'Ø'+t.D+' z'+t.z}</small></span></button>`).join('');
+  $$('#mToolList .tcard').forEach(b=>{const t=b.dataset.mtool==='mk'?headTool():MTB[b.dataset.mtool];toolIcon(b.querySelector('canvas').getContext('2d'),t);
+    b.onclick=()=>{F.tool=b.dataset.mtool;F.cm=t.cm;buildTool();MM.z=Math.max(MM.z,topZ()+8);if(F.tool==='tn21'&&F.op!=='tnut')F.op='tnut';else if(F.tool!=='tn21'&&F.op==='tnut')F.op='nut';
+      const fz=F.tool==='mk'&&HEADS[F.head.typ].fase;if(fz)F.op='fase';else if(F.op==='fase')F.op='schulter';sync();recalc()}});
+  {const gr={};for(const [k,H] of Object.entries(HEADS))(gr[H.grp]=gr[H.grp]||[]).push(`<option value="${k}">${H.n} · ${H.ins.split(' ')[0]}</option>`);
+   $('#mHeadT').innerHTML=Object.entries(gr).map(([g,o])=>`<optgroup label="${g}">${o.join('')}</optgroup>`).join('')}
+  const headChg=e=>{const h=F.head;h.typ=$('#mHeadT').value;const H=HEADS[h.typ],ds=dsOf(H);h.D=+$('#mHeadD').value;if(!ds.includes(h.D))h.D=ds[Math.floor(ds.length/2)];
+    const [z0,z1]=zRange(H,h.D);h.z=e&&e.target.id==='mHeadZ'?+$('#mHeadZ').value:clamp(+$('#mHeadZ').value||z0,z0,z1);h.z=clamp(h.z,z0,z1);
+    if(F.tool==='mk'){if(H.fase)F.op='fase';else if(F.op==='fase')F.op='schulter'}buildTool();MM.z=Math.max(MM.z,topZ()+8);
+    const ti=$('#mToolList [data-mtool="mk"] canvas').getContext('2d');ti.clearRect(0,0,104,80);toolIcon(ti,headTool());sync();recalc()};
+  ['#mHeadT','#mHeadD','#mHeadZ'].forEach(s=>$(s).onchange=headChg);
+  $$('#mOpChips .chip').forEach(b=>b.onclick=()=>{F.op=b.dataset.mop;sync();recalc()});$$('#mLaufChips .chip').forEach(b=>b.onclick=()=>{F.lauf=b.dataset.lauf;sync();recalc()});
+  bindNum('mL','mvL',{n:'Länge',min:20,max:300,u:'mm',set:v=>F.L=v,slide:v=>F.L=v,rv:()=>F.L,txt:()=>F.L+' mm'});
+  bindNum('mB','mvB',{n:'Breite',min:10,max:150,u:'mm',why:'der Schraubstock öffnet bis 150 mm',set:v=>F.B=v,slide:v=>F.B=v,rv:()=>F.B,txt:()=>F.B+' mm'});
+  bindNum('mH','mvH',{n:'Höhe',min:8,max:120,u:'mm',set:v=>F.H=v,slide:v=>F.H=v,rv:()=>F.H,txt:()=>F.H+' mm'});
+  bindNum('mAp','mvAp',{n:'Schnitttiefe a_p',min:0.05,max:60,u:'mm',set:v=>F.ap=v,slide:v=>F.ap=v,rv:()=>F.ap,txt:()=>fmt(F.ap,1)+' mm'});
+  bindNum('mAe','mvAe',{n:'Arbeitseingriff a_e',min:0.1,max:()=>tool().D,u:'mm',why:'höchstens der Fräserdurchmesser',set:v=>F.ae=v,slide:v=>F.ae=v,rv:()=>F.ae,txt:()=>fmt(F.ae,1)+' mm'});
+  bindNum('mT','mvT',{n:'Frästiefe',min:0.1,max:()=>F.H-3,u:'mm',why:'sonst Schraubstock',set:v=>F.t=v,slide:v=>F.t=v,rv:()=>F.t,txt:()=>fmt(F.t,1)+' mm'});
+  bindNum('mSy','mvSy',{n:'Nutlage Y',min:0,max:()=>F.B,u:'mm',set:v=>F.sy=v,slide:v=>F.sy=v,rv:()=>F.sy,txt:()=>fmt0(F.sy)+' mm'});
+  bindNum('mSl','mvSl',{n:'Nutlänge',min:1,max:()=>F.L,u:'mm',set:v=>F.sl=v,slide:v=>F.sl=v,rv:()=>F.sl,txt:()=>fmt0(F.sl)+' mm'});
+  bindNum('mN','mvN',{n:'Drehzahl',min:1,max:2800,u:'min⁻¹',why:'die Maschine dreht höchstens 2800 min⁻¹',set:v=>F.nC=v,slide:v=>{F.nC=null;F.nI=v},rv:()=>F.nI,txt:()=>fmt0(nVal())+' min⁻¹'});
+  bindNum('mVf','mvVf',{n:'Vorschub v_f',min:1,max:1500,u:'mm/min',set:v=>F.vfC=v,slide:v=>{F.vfC=null;F.vfI=v},rv:()=>F.vfI,txt:()=>fmt(vfVal(),vfVal()%1?1:0)+' mm/min'});
+  $('#mCm').onchange=e=>{F.cm=e.target.value;recalc()};$('#mWear').onchange=e=>{F.wear=+e.target.value;recalc()};
+  $('#mbLoad').onclick=()=>{halt();setSpindle(false);chips.length=0;buildBlock();sync();recalc();toast('Neues Rohteil gespannt.','info')};
+  $('#mReload').onclick=$('#mbLoad').onclick;
+  $('#mbSpindle').onclick=()=>setSpindle(!MM.spindle);$('#mkSpOn').onclick=()=>setSpindle(true);$('#mkSpOff').onclick=()=>setSpindle(false);
+  $('#mbStart').onclick=startCycle;$('#mStart2').onclick=startCycle;
+  $('#mbStop').onclick=()=>{halt();toast('Halt – Vorschub gestoppt.','info')};$('#mkStop').onclick=$('#mbStop').onclick;
+  $('#mkReset').onclick=()=>{halt();MM.status='Reset'};
+  $('#mkEstop').onclick=()=>{halt('NOT-HALT: Spindel und Vorschübe gestoppt.');setSpindle(false);MM.status='Not-Halt'};
+  $('#mkHome').onclick=()=>{MM.q=[{x:MM.x,y:MM.y,z:Math.max(F.H,topZ())+25,feed:false}]};
+  $('#mSpeed').onchange=e=>F.speed=+e.target.value;
+  $('#mNrec').onclick=()=>{const t=tool(),n=CALC.rec*1000/(Math.PI*t.D);let i=0;while(i<N_ST.length-1&&N_ST[i+1]<=n)i++;F.nC=null;F.nI=i;const vf=(t.fz[0]+t.fz[1])/2*t.z*N_ST[i];let j=0;while(j<VF_ST.length-1&&VF_ST[j+1]<=vf)j++;F.vfC=null;F.vfI=j;sync();recalc();toast(`n = ${N_ST[i]} min⁻¹, v_f = ${VF_ST[j]} mm/min gewählt.`,'info')};
+  // Softkeys
+  const MP=['pos','mda','auto','tech','alarm'],MODE={pos:'JOG',mda:'MDA',auto:'AUTOMATIK',tech:'PARAMETER',alarm:'DIAGNOSE'};
+  const page=p=>{F.mp=p;$$('#mpanel .crtpage').forEach(d=>d.hidden=d.dataset.mp!==p);$$('[data-msk]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.msk===p));$('#mcMode').textContent=MODE[p]};
+  $$('[data-msk]').forEach(b=>b.onclick=()=>page(b.dataset.msk));$('#mskPrev').onclick=()=>page(MP[(MP.indexOf(F.mp)+4)%5]);$('#mskNext').onclick=()=>page(MP[(MP.indexOf(F.mp)+1)%5]);$('#mcAlarm').onclick=()=>page('alarm');page('pos');
+  // MDA und Zahlenfeld
+  const go=feed=>{const g=k=>parseFloat(String($('#mSoll'+k).value).replace(',','.'));const X=g('X'),Y=g('Y'),Z=g('Z');if(![X,Y,Z].every(Number.isFinite)){toast('Bitte Soll-Werte für X, Y und Z eingeben.');return}
+    if(feed&&!MM.spindle){toast('G1 geht nur bei laufender Spindel.');return}F.mdaG=feed?1:0;$('#mMdaG').textContent=feed?'G1':'G0';MM.q=[{x:X,y:Y,z:Z+F.H,feed}];MM.job='goto'};
+  const take=()=>{$('#mSollX').value=MM.x.toFixed(2);$('#mSollY').value=MM.y.toFixed(2);$('#mSollZ').value=(MM.z-F.H).toFixed(2)};
+  $('#mGoRapid').onclick=()=>go(false);$('#mGoFeed').onclick=()=>go(true);$('#mTake').onclick=take;take();
+  $('#mkStart').onclick=()=>{if(F.mp==='mda')go(!!F.mdaG);else startCycle()};
+  let fld='X';const mark=()=>{$$('#mkeypad .adr').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===fld));['X','Y','Z'].forEach(k=>$('#mSoll'+k).classList.toggle('kfocus',k===fld))};
+  ['X','Y','Z'].forEach(k=>$('#mSoll'+k).addEventListener('focus',()=>{fld=k;mark()}));
+  $$('#mkeypad button').forEach(b=>b.onclick=()=>{if(F.mp!=='mda')page('mda');const k=b.dataset.k,inp=$('#mSoll'+fld);let v=String(inp.value);
+    if('XYZ'.includes(k)&&k.length===1&&isNaN(+k)){fld=k;$('#mSoll'+fld).dataset.fresh='1';mark();return}
+    if(inp.dataset.fresh==='1'&&/[0-9.\-]/.test(k)){v='';inp.dataset.fresh=''}
+    if(k==='BS')v=v.slice(0,-1);else if(k==='-')v=v.startsWith('-')?v.slice(1):'-'+v;else if(k==='.'){if(!v.includes('.'))v=(v===''||v==='-'?v+'0':v)+'.'}
+    else if(k==='IN'){fld={X:'Y',Y:'Z',Z:'X'}[fld];$('#mSoll'+fld).dataset.fresh='1';mark();return}else v+=k;inp.value=v;mark()});
+  mark();
+  // Tipptasten, Override
+  $$('[data-mjog]').forEach(b=>{const [a,c,d]=b.dataset.mjog.split(',').map(Number);const st=e=>{e.preventDefault();MM.q=[];MM.jx=a;MM.jy=c;MM.jz=d;b.setPointerCapture&&b.setPointerCapture(e.pointerId)},en=()=>{MM.jx=MM.jy=MM.jz=0};
+    b.addEventListener('pointerdown',st);b.addEventListener('pointerup',en);b.addEventListener('pointercancel',en);b.addEventListener('lostpointercapture',en)});
+  {const r=$('#mkRapid');r.addEventListener('pointerdown',e=>{e.preventDefault();MM.shift=true});r.addEventListener('pointerup',()=>MM.shift=false);r.addEventListener('pointerleave',()=>MM.shift=false)}
+  const OVR=[0,2,4,6,8,10,20,30,40,50,60,70,75,80,85,90,95,100,105,110,120];
+  const setO=i=>{i=clamp(i,0,OVR.length-1);F.ovrI=i;F.ovr=OVR[i];$('#movr').style.transform=`rotate(${-135+270*i/(OVR.length-1)}deg)`;$('#movrVal').textContent=F.ovr+' %';$('#mcProg').textContent='KANAL 1  %'+F.ovr};
+  {const k=$('#movr');let st=null;k.addEventListener('pointerdown',e=>{st={y:e.clientY,i:F.ovrI};k.setPointerCapture(e.pointerId)});k.addEventListener('pointermove',e=>{if(st)setO(st.i+Math.round((st.y-e.clientY)/12))});k.addEventListener('pointerup',()=>st=null);
+   k.addEventListener('wheel',e=>{e.preventDefault();setO(F.ovrI+(e.deltaY<0?1:-1))},{passive:false})}
+  setO(17);
+  // Ansichten
+  $$('[data-mview]').forEach(b=>b.onclick=()=>setView(b.dataset.mview));
+  $('#mckHud').onchange=e=>$('#mhud').hidden=!e.target.checked;$('#mckDro').onchange=e=>$('#mdro').hidden=!e.target.checked;
+  // Tastatur
+  const KEYS={ArrowLeft:[-1,0,0],ArrowRight:[1,0,0],ArrowUp:[0,-1,0],ArrowDown:[0,1,0],PageUp:[0,0,1],PageDown:[0,0,-1]},P=new Set(),CAM=new Set(['w','a','s','d','q','e']);
+  const km=()=>{let a=0,c=0,d=0;for(const k of P)if(KEYS[k]){a+=KEYS[k][0];c+=KEYS[k][1];d+=KEYS[k][2]}MM.jx=Math.sign(a);MM.jy=Math.sign(c);MM.jz=Math.sign(d)};
+  window.addEventListener('keydown',e=>{if(window.APP!=='fraes'||(e.target.closest&&e.target.closest('input,select,textarea')))return;MM.shift=e.shiftKey;const k=e.key.length===1?e.key.toLowerCase():e.key;
+    if(KEYS[k]){e.preventDefault();if(!P.has(k)){P.add(k);MM.q=[];km()}}else if(CAM.has(k)){e.preventDefault();P.add(k)}else if(e.key===' '&&e.target===$('#mgl')){e.preventDefault();setSpindle(!MM.spindle)}});
+  window.addEventListener('keyup',e=>{if(window.APP!=='fraes')return;MM.shift=e.shiftKey;const k=e.key.length===1?e.key.toLowerCase():e.key;P.delete(k);if(KEYS[k])km()});
+  window.addEventListener('blur',()=>{P.clear();MM.jx=MM.jy=MM.jz=0});
+  wire.P=P;
+}
+function setView(v){F.view=v;$$('[data-mview]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.mview===v));
+  let p,t;if(v==='gesamt'){p=[330,260,360];t=[40,10,20]}else if(v==='nah'){p=[90,MM.z+70,110];t=[0,MM.z,0]}else if(v==='oben'){p=[0,MM.z+260,1];t=[0,F.H,0]}else{p=[0,F.H+30,300];t=[0,F.H*0.6,0]}
+  camAnim={p0:camera.position.clone(),t0:controls.target.clone(),p1:new THREE.Vector3(...p),t1:new THREE.Vector3(...t),k:0}}
+
+/* ---------- Schleife ---------- */
+let last=performance.now(),hudT=0;
+function frame(now){
+  requestAnimationFrame(frame);const dt=Math.min(0.05,(now-last)/1000);last=now;if(window.APP!=='fraes')return;
+  simulate(dt);updateBlock(false);updateChips(dt);
+  tableG.position.set(-MM.x,0,-MM.y);toolG.position.set(0,MM.z,0);cutterG.rotation.y=-MM.rot;quill.position.set(0,MM.z+toolTop()+160,0);
+  if(camAnim){camAnim.k=Math.min(1,camAnim.k+dt/0.6);const e=1-Math.pow(1-camAnim.k,3);camera.position.lerpVectors(camAnim.p0,camAnim.p1,e);controls.target.lerpVectors(camAnim.t0,camAnim.t1,e);if(camAnim.k>=1)camAnim=null}
+  {const P=wire.P;let mv=0,st=0,rot=0;if(P.has('w'))mv++;if(P.has('s'))mv--;if(P.has('d'))st++;if(P.has('a'))st--;if(P.has('q'))rot++;if(P.has('e'))rot--;
+   if(mv||st||rot){camAnim=null;const sp=Math.max(40,camera.position.distanceTo(controls.target)*1.1)*dt,f=new THREE.Vector3().subVectors(controls.target,camera.position);f.y=0;f.normalize();const r=new THREE.Vector3().crossVectors(f,new THREE.Vector3(0,1,0)).normalize();
+     const o=f.multiplyScalar(mv*sp).add(r.multiplyScalar(st*sp));camera.position.add(o);controls.target.add(o);if(rot){const q=camera.position.clone().sub(controls.target);q.applyAxisAngle(new THREE.Vector3(0,1,0),-rot*1.3*dt);camera.position.copy(controls.target).add(q)}}}
+  controls.update();R3.render(scene,camera);
+  if(now>hudT){hudT=now+120;const R=CALC,zr=MM.z-F.H;
+    $('#mhN').textContent=MM.spindle?nVal()+' min⁻¹':'0 (steht)';$('#mhVc').textContent=fmt0(R.vc)+' m/min';$('#mhVf').textContent=`${fmt0(vfVal()*F.ovr/100)} · ${fmt3(R.fz)}`;$('#mhA').textContent=`${fmt(R.ap,1)} · ${fmt(R.ae,1)} mm`;
+    $('#mhPc').textContent=LIVE.cut?fmt2(LIVE.Pc)+' kW':'kein Eingriff';$('#mhFc').textContent=LIVE.cut?fmt0(LIVE.Fc)+' N':'–';$('#mhSt').textContent=MM.status;
+    $('#mdroX').textContent=fmt(MM.x,3);$('#mdroY').textContent=fmt(MM.y,3);$('#mdroZ').textContent=fmt(zr,3);
+    $('#miX').textContent=fmt(MM.x,3);$('#miY').textContent=fmt(MM.y,3);$('#miZ').textContent=fmt(zr,3);
+    const q=MM.q[0];$('#mrX').textContent=fmt(q?q.x-MM.x:0,3);$('#mrY').textContent=fmt(q?q.y-MM.y:0,3);$('#mrZ').textContent=fmt(q?q.z-MM.z:0,3);
+    $('#mcS').textContent=MM.spindle?nVal():0;$('#mcF').textContent=fmt0(MM.q.length&&!MM.rapid?vfVal()*F.ovr/100:0)+' MM/MIN';$('#mcO').textContent=F.ovr+' %';$('#mcT').textContent=tool().code.split('·').slice(-2).join('·').trim();
+    $('#mcStat').textContent=String(MM.status).toUpperCase();
+    const al=R.msgs.filter(m=>m.lv!=='info'),el=$('#mcAlarm');el.textContent=al.length?`${al.length} ALARM  ${al[0].tx.replace(/_/g,'').toUpperCase()}`:'KEIN ALARM';el.classList.toggle('on',al.length>0);
+    $('#mledAl').classList.toggle('on',al.length>0);$('#mledSp').classList.toggle('on',MM.spindle);$('#mledFd').classList.toggle('on',LIVE.cut);$('#mledAu').classList.toggle('on',!!MM.job&&MM.job!=='goto');
+    $('#mbStart').disabled=!!MM.q.length;
+  }
+}
+function boot(){wire();sync();recalc();}
+const _init=init;init=function(){_init();boot();setTimeout(()=>{if(!MM.q.length)startCycle()},700)};
+window.__mill={F,MM,get CALC(){return CALC},startCycle,setSpindle,switchApp,buildTool,sync,recalc,tool,buildBlock,camSet(p,t){camAnim=null;camera.position.set(...p);controls.target.set(...t)},fast(n){for(let i=0;i<n&&(MM.q.length||i<2);i++){simulate(0.05);updateBlock(false)}return {q:MM.q.length,x:MM.x,y:MM.y,z:MM.z}},get WP(){return WP},snap(){R3.render(scene,camera);return $('#mgl').toDataURL()},LIVE};
+})();
+
 </script>
